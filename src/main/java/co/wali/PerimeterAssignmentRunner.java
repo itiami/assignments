@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class PerimeterAssignmentRunner  {
 
-    public double getPerimeter (Shape s) {
+    public double getPerimeter (NShape s) {
         double totalPerim = 0.0;
         edu.duke.Point prevPt = s.getLastPoint();
         for (Point currPt : s.getPoints()) {
@@ -37,7 +37,7 @@ public class PerimeterAssignmentRunner  {
         }
     }
 
-    public Point getLargestSide(Shape s){
+    public Point getLargestSide(NShape s){
         Point largest = s.getLastPoint();
         for (Point point : s.getPoints()) {
             if (comparePoints(point, largest) > 0) {
@@ -48,7 +48,7 @@ public class PerimeterAssignmentRunner  {
     }
 
 
-    public Point getLargestX(Shape s){
+    public Point getLargestX(NShape s){
         Point largest = s.getLastPoint();
         for (Point point : s.getPoints()) {
             if (compareX(point, largest) > 0) {
@@ -59,7 +59,7 @@ public class PerimeterAssignmentRunner  {
     }
 
 
-    public  int getNumPoints(Shape shape){
+    public  int getNumPoints(NShape shape){
         Iterable<Point> numPoints = shape.getPoints();
         int counter = 0;
         for (Point i : numPoints){
@@ -70,8 +70,8 @@ public class PerimeterAssignmentRunner  {
 
 
     public void testPerimeter() {
-        FileResource fr = new FileResource("src/main/resources/shape.txt");
-        Shape s = new Shape(fr);
+        FileResource fr = new FileResource("src/main/resources/shape1.txt");
+        NShape s = new NShape(fr);
         double length = getPerimeter(s);
         int num = getNumPoints(s);
 //        System.out.println("Perimeter = " + Math.round(length));
@@ -90,7 +90,7 @@ public class PerimeterAssignmentRunner  {
 
         for (File f : dr.selectedFiles()) {
             FileResource fr = new FileResource(f);
-            Shape s = new Shape(fr);
+            NShape s = new NShape(fr);
             double currPerimeter = getPerimeter(s);
             if (currPerimeter > largestPerimeter) {
                 largestPerimeter = currPerimeter;
@@ -112,7 +112,7 @@ public class PerimeterAssignmentRunner  {
 
         for (File f : dr.selectedFiles()) {
             FileResource fr = new FileResource(f);
-            Shape s = new Shape(fr);
+            NShape s = new NShape(fr);
             double currPerimeter = getPerimeter(s);
             if (currPerimeter > largestPerimeter) {
                 largestPerimeter = currPerimeter;
