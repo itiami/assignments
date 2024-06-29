@@ -17,8 +17,8 @@ public class Main {
 //        System.out.println("Point Distance: " + p1.distance(p2));
 //        System.out.println(Double.parseDouble(" 003.02"));
 
-        PerimeterRunner perimeterRunner = new PerimeterRunner();
-        perimeterRunner.testFileWithLargestPerimeter();
+        PerimeterAssignmentRunner  perimeterRunner = new PerimeterAssignmentRunner ();
+        perimeterRunner.testPerimeter();
 
     }
 }
