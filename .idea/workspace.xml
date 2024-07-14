@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="FirstCommit">
+    <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="ExampleShape">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/shape2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shape2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/shape3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shape3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/PerimeterAssignmentRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/PerimeterAssignmentRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/shape1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/shape1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,22 +41,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "D:/JavaApp/Java_Duke_IntelliJ/src/main/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.20798515",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaApp/Java_Duke_IntelliJ/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.20798515&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JavaApp\Java_Duke_IntelliJ\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaApp\Java_Duke_IntelliJ\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="co.wali" />
     </key>
   </component>
   <component name="RunManager">
@@ -90,7 +97,13 @@
       <workItem from="1719078849355" duration="4857000" />
       <workItem from="1719127565003" duration="12128000" />
       <workItem from="1719162492205" duration="7470000" />
-      <workItem from="1719667433869" duration="3246000" />
+      <workItem from="1719667433869" duration="14370000" />
+      <workItem from="1720346147411" duration="2825000" />
+      <workItem from="1720590162098" duration="1652000" />
+      <workItem from="1720591993005" duration="297000" />
+      <workItem from="1720879554750" duration="6262000" />
+      <workItem from="1720888568987" duration="6462000" />
+      <workItem from="1720955596113" duration="762000" />
     </task>
     <task id="LOCAL-00001" summary="FirstCommit">
       <created>1719669302362</created>
@@ -120,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719670867017</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ExampleShape">
+      <created>1719671013117</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719671013117</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +159,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="FirstCommit" />
-    <option name="LAST_COMMIT_MESSAGE" value="FirstCommit" />
+    <MESSAGE value="ExampleShape" />
+    <option name="LAST_COMMIT_MESSAGE" value="ExampleShape" />
   </component>
 </project>
