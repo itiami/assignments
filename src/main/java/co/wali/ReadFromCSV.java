@@ -12,10 +12,6 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
-import com.opencsv.exceptions.CsvValidationException;
-
 public class ReadFromCSV {
     public void run() {
 //        readCsvByScanner("src/main/resources/foods.csv");

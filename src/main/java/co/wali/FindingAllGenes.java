@@ -1,7 +1,6 @@
 package co.wali;
 
-import edu.duke.FileResource;
-import edu.duke.StorageResource;
+import edu.duke.*;
 
 import java.io.IOException;
 import java.nio.file.Files;

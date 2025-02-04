@@ -19,8 +19,19 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        Part1 part1 = new Part1();
+        Part2 part2 = new Part2();
+        Part3 part3 = new Part3();
         Part4 part4 = new Part4();
-        part4.run();
+        HotestTemperatureFinder hotestTemperatureFinder = new HotestTemperatureFinder();
+
+//        part1.findGene();
+//        part1.testSimpleGene();
+//        part2.testSimpleGene();
+//        part2.findGene();
+//        part3.testing();
+//        part4.run();
+        hotestTemperatureFinder.run();
     }
 }
 

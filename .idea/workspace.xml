@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup" />
+    <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/FindingAllGenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/FindingAllGenes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/HotestTemperatureFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/HotestTemperatureFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Part4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Part4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/ReadFromCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/ReadFromCSV.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,8 +48,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Coursera_Packages/edu.duke/apache-csv.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Coursera_Packages/edu.duke/courserajava.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.20798515&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
@@ -62,7 +69,7 @@
   </component>
   <component name="RunManager">
     <configuration name="MainApp" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="co.wali.Main" />
       <module name="Java_Duke_IntelliJ.main" />
@@ -102,6 +109,16 @@
       <workItem from="1720965700361" duration="14314000" />
       <workItem from="1721061049620" duration="11530000" />
       <workItem from="1721107878489" duration="3931000" />
+      <workItem from="1738567460977" duration="531000" />
+      <workItem from="1738583320332" duration="145000" />
+      <workItem from="1738583490311" duration="309000" />
+      <workItem from="1738583824671" duration="640000" />
+      <workItem from="1738584486096" duration="171000" />
+      <workItem from="1738605591174" duration="215000" />
+      <workItem from="1738606703597" duration="19000" />
+      <workItem from="1738608554542" duration="390000" />
+      <workItem from="1738610453135" duration="4037000" />
+      <workItem from="1738652672613" duration="913000" />
     </task>
     <task id="LOCAL-00001" summary="FirstCommit">
       <created>1719669302362</created>
