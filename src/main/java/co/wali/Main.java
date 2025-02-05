@@ -23,7 +23,7 @@ public class Main {
         Part2 part2 = new Part2();
         Part3 part3 = new Part3();
         Part4 part4 = new Part4();
-        HotestTemperatureFinder hotestTemperatureFinder = new HotestTemperatureFinder();
+        TemperatureFinder temperatureFinder = new TemperatureFinder();
 
 //        part1.findGene();
 //        part1.testSimpleGene();
@@ -31,7 +31,7 @@ public class Main {
 //        part2.findGene();
 //        part3.testing();
 //        part4.run();
-        hotestTemperatureFinder.run();
+        temperatureFinder.run();
     }
 }
 
