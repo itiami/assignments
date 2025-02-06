@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/HotestTemperatureFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/TemperatureFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/TemperatureFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/TemperatureFinder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +118,9 @@
       <workItem from="1738652672613" duration="913000" />
       <workItem from="1738653693896" duration="778000" />
       <workItem from="1738702974394" duration="5526000" />
+      <workItem from="1738740037859" duration="49000" />
+      <workItem from="1738789093830" duration="252000" />
+      <workItem from="1738826357798" duration="259000" />
     </task>
     <task id="LOCAL-00001" summary="FirstCommit">
       <created>1719669302362</created>

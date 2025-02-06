@@ -14,109 +14,109 @@ import java.util.stream.Stream;
 public class TemperatureFinder {
 
     public void run(){
-//        temperatureFromSingleFile("src/main/resources/nc_weather/2014/weather-2014-01-20.csv");
-    temperateFromMultiFile();
+        temperatureFromSingleFile("src/main/resources/nc_weather/2014/weather-2014-01-20.csv");
+
     }
-    private void temperateFromMultiFile(){
-        double maxTemp = 0.0;
-        String maxTemp_Date = "";
+
+    private WeatherStats processWeatherData(CSVParser parser) {
+        double maxTemp = Double.MIN_VALUE;
+        String maxTempDate = "";
         double lowestTemp = Double.MAX_VALUE;
-        String lowestTemp_date = "";
-
+        String lowestTempDate = "";
         double lowestHumidity = Double.MAX_VALUE;
-        String loestHumidityDate = "";
+        String lowestHumidityDate = "";
+        int totalRows = 0;
+        double tempSum = 0;
 
-        DirectoryResource directoryResource = new DirectoryResource();
-        for (File file: directoryResource.selectedFiles()){
-            FileResource fr = new FileResource(file.getAbsolutePath());
-            CSVParser parser = fr.getCSVParser();
-            int totalRow = 0;
-            double tempCount = 0;
+        try {
+            for (CSVRecord record : parser.getRecords()) {
+                totalRows++;
+                String date = record.get("DateUTC");
+                double temp = Double.parseDouble(record.get("TemperatureF"));
+                double humidity = Double.parseDouble(record.get("Humidity"));
 
-            try {
-                for (CSVRecord currentRecords: parser.getRecords()) {
-                    totalRow++;
-                    String date = currentRecords.get("DateUTC");
-                    double temp = Double.parseDouble(currentRecords.get("TemperatureF"));
-                    tempCount += Double.parseDouble(currentRecords.get("TemperatureF"));
-                    double humidity = Double.parseDouble(currentRecords.get("Humidity"));
-                    if (temp > maxTemp) {
-                        maxTemp = temp;
-                        maxTemp_Date = date;
-                    }
+                tempSum += temp;
 
-                    if (temp < lowestTemp){
-                        lowestTemp = temp;
-                        lowestTemp_date = date;
-                    }
-
-                    if (humidity < lowestHumidity){
-                        lowestHumidity = humidity;
-                        loestHumidityDate = date;
-                    }
+                if (temp > maxTemp) {
+                    maxTemp = temp;
+                    maxTempDate = date;
                 }
-                System.out.println("Average temperature: " + tempCount/totalRow);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        };
 
-//        if (temperature != Double.MIN_VALUE) {
-//            System.out.println(tempFile + "==> " + tempDate + "==> "+ temperature);
-//        } else {
-//            System.out.println("No valid temperature data found.");
-//        }
-        System.out.println("Max Temperature: " + maxTemp + "==>" + maxTemp_Date);
-        System.out.println("Lowest Temperature: " + lowestTemp + "==>" + lowestTemp_date);
-        System.out.println("Lowest Humidity: " + lowestHumidity + ": "+ loestHumidityDate);
+                if (temp < lowestTemp) {
+                    lowestTemp = temp;
+                    lowestTempDate = date;
+                }
+
+                if (humidity < lowestHumidity) {
+                    lowestHumidity = humidity;
+                    lowestHumidityDate = date;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        double avgTemp = (totalRows > 0) ? tempSum / totalRows : 0.0;
+
+        return new WeatherStats(maxTemp, maxTempDate, lowestTemp, lowestTempDate, lowestHumidity, lowestHumidityDate, avgTemp, totalRows);
     }
 
-    private void temperatureFromSingleFile(String file){
-        if (Files.exists(Path.of(file))){
-            try {
-                FileResource fr = new FileResource(file);
-                CSVParser parser = fr.getCSVParser();
-                double maxTemp = 0.0;
-                String maxTemp_Date = "";
-                double lowestTemp = Double.MAX_VALUE;
-                String lowestTemp_date = "";
-                int totalRow = 0;
-                double tempCount = 0;
-                double lowestHumidity = Double.MAX_VALUE;
-                String loestHumidityDate = "";
+    // Method to process multiple files
+    private void temperatureFromMultiFile() {
+        DirectoryResource directoryResource = new DirectoryResource();
 
-                for (CSVRecord currentRecords: parser.getRecords()) {
-                    totalRow++;
-                    String date = currentRecords.get("DateUTC");
-                    double temp = Double.parseDouble(currentRecords.get("TemperatureF"));
-                    tempCount += Double.parseDouble(currentRecords.get("TemperatureF"));
-                    double humidity = Double.parseDouble(currentRecords.get("Humidity"));
+        double maxTemp = Double.MIN_VALUE;
+        String maxTempDate = "";
+        double lowestTemp = Double.MAX_VALUE;
+        String lowestTempDate = "";
+        double lowestHumidity = Double.MAX_VALUE;
+        String lowestHumidityDate = "";
+        double totalTempSum = 0;
+        int totalRecords = 0;
 
-                    if (temp > maxTemp) {
-                        maxTemp = temp;
-                        maxTemp_Date = date;
-                    }
+        for (File file : directoryResource.selectedFiles()) {
+            FileResource fr = new FileResource(file);
+            WeatherStats stats = processWeatherData(fr.getCSVParser());
 
-                    if (temp < lowestTemp){
-                        lowestTemp = temp;
-                        lowestTemp_date = date;
-                    }
-
-                    if (humidity < lowestHumidity){
-                        lowestHumidity = humidity;
-                        loestHumidityDate = date;
-                    }
-                }
-                System.out.println("Max Temperature: " + maxTemp + "==>" + maxTemp_Date);
-                System.out.println("Lowest Temperature: " + lowestTemp + "==>" + lowestTemp_date);
-                System.out.println("Total records: " + totalRow + "Total Temperature: " + tempCount);
-                System.out.println("Average temperature: " + tempCount/totalRow);
-                System.out.println("Lowest Humidity: " + lowestHumidity + ": "+ loestHumidityDate);
-            }catch (Exception e){
-                e.printStackTrace();
+            // Aggregate results across multiple files
+            if (stats.getMaxTemp() > maxTemp) {
+                maxTemp = stats.getMaxTemp();
+                maxTempDate = stats.getMaxTempDate();
             }
-        }else {
-            System.out.println("File not Found");
+            if (stats.getLowestTemp() < lowestTemp) {
+                lowestTemp = stats.getLowestTemp();
+                lowestTempDate = stats.getLowestTempDate();
+            }
+            if (stats.getLowestHumidity() < lowestHumidity) {
+                lowestHumidity = stats.getLowestHumidity();
+                lowestHumidityDate = stats.getLowestHumidityDate();
+            }
+
+            totalTempSum += stats.getAvgTemp() * stats.getTotalRecords();
+            totalRecords += stats.getTotalRecords();
+        }
+
+        double avgTemperature = (totalRecords > 0) ? totalTempSum / totalRecords : 0.0;
+
+        System.out.println("Max Temperature: " + maxTemp + " ==> " + maxTempDate);
+        System.out.println("Lowest Temperature: " + lowestTemp + " ==> " + lowestTempDate);
+        System.out.println("Lowest Humidity: " + lowestHumidity + " ==> " + lowestHumidityDate);
+        System.out.println("Overall Average Temperature: " + avgTemperature);
+    }
+
+    // Method to process a single file
+    private void temperatureFromSingleFile(String filePath) {
+        if (Files.exists(Path.of(filePath))) {
+            FileResource fr = new FileResource(filePath);
+            WeatherStats stats = processWeatherData(fr.getCSVParser());
+
+            System.out.println("Max Temperature: " + stats.getMaxTemp() + " ==> " + stats.getMaxTempDate());
+            System.out.println("Lowest Temperature: " + stats.getLowestTemp() + " ==> " + stats.getLowestTempDate());
+            System.out.println("Lowest Humidity: " + stats.getLowestHumidity() + " ==> " + stats.getLowestHumidityDate());
+            System.out.println("Total Records: " + stats.getTotalRecords());
+            System.out.println("Average Temperature: " + stats.getAvgTemp());
+        } else {
+            System.out.println("File not found.");
         }
     }
 
