@@ -14,8 +14,8 @@ import java.util.stream.Stream;
 public class TemperatureFinder {
 
     public void run(){
-        temperatureFromSingleFile("src/main/resources/nc_weather/2014/weather-2014-01-20.csv");
-
+//        temperatureFromSingleFile("src/main/resources/nc_weather/2014/weather-2014-01-20.csv");
+temperatureFromMultiFile();
     }
 
     private WeatherStats processWeatherData(CSVParser parser) {

@@ -37,7 +37,7 @@ public class Part2Extended {
         System.out.println("DNA_2 strand is " + dna);
         System.out.println("Gene is " + findSimpleGene(dna, startCodon, stopCodon));
 
-        // DNA with no “ATG” nor “TAA”
+        // DNA with no ATG nor TAA
         dna = "ATTAGTGTA";
         System.out.println("DNA_3 strand is " + dna);
         System.out.println("Gene is " + findSimpleGene(dna, startCodon, stopCodon));
