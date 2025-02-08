@@ -10,7 +10,8 @@ repositories {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation(files("libs/courserajava.jar"))
+    implementation(files("libs/apache-csv.jar"))
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     // jsoup HTML parser library @ https://jsoup.org/

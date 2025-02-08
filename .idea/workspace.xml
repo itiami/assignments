@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Part2Extended.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Part2Extended.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/TemperatureFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/TemperatureFinder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +121,7 @@
       <workItem from="1738740037859" duration="49000" />
       <workItem from="1738789093830" duration="252000" />
       <workItem from="1738826357798" duration="520000" />
-      <workItem from="1739047704583" duration="764000" />
+      <workItem from="1739047704583" duration="2911000" />
     </task>
     <task id="LOCAL-00001" summary="FirstCommit">
       <created>1719669302362</created>
