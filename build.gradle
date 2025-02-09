@@ -1,9 +1,15 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
 group 'co.wali'
 version '1.0-SNAPSHOT'
+apply plugin: 'application'
+
+application {
+    // Define the main class for the application.
+    mainClass = 'co.wali.Main'
+}
 
 repositories {
     mavenCentral()
@@ -12,6 +18,17 @@ repositories {
 dependencies {
     implementation(files("libs/courserajava.jar"))
     implementation(files("libs/apache-csv.jar"))
+    def javafxVersion = "21.0.1"
+
+    implementation "org.openjfx:javafx-base:${javafxVersion}"
+    implementation "org.openjfx:javafx-controls:${javafxVersion}"
+    implementation "org.openjfx:javafx-fxml:${javafxVersion}"
+    implementation "org.openjfx:javafx-graphics:${javafxVersion}"
+
+    // Add platform-specific dependencies if needed
+    implementation "org.openjfx:javafx-media:${javafxVersion}"
+    implementation "org.openjfx:javafx-swing:${javafxVersion}"
+    implementation "org.openjfx:javafx-web:${javafxVersion}"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     // jsoup HTML parser library @ https://jsoup.org/

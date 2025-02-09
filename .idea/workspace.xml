@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Java_Duke_IntelliJ-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +49,7 @@
     "dart.analysis.tool.window.visible": "false",
     "last_opened_file_path": "D:/JavaApp/Java_Duke_IntelliJ/libs/apache-csv.jar",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.20798515",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
@@ -66,7 +69,7 @@
   </component>
   <component name="RunManager">
     <configuration name="MainApp" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/SDK/Oracle_JDK/openjdk-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="co.wali.Main" />
       <module name="Java_Duke_IntelliJ.main" />
@@ -122,6 +125,14 @@
       <workItem from="1738789093830" duration="252000" />
       <workItem from="1738826357798" duration="520000" />
       <workItem from="1739047704583" duration="2911000" />
+      <workItem from="1739051428258" duration="806000" />
+      <workItem from="1739091819086" duration="2414000" />
+      <workItem from="1739097213977" duration="222000" />
+      <workItem from="1739097459377" duration="957000" />
+      <workItem from="1739106982004" duration="538000" />
+      <workItem from="1739107538645" duration="314000" />
+      <workItem from="1739108501135" duration="30000" />
+      <workItem from="1739108584000" duration="281000" />
     </task>
     <task id="LOCAL-00001" summary="FirstCommit">
       <created>1719669302362</created>
