@@ -5,41 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/FileSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/FileSelector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindGeneSimpleAndTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindGeneSimpleAndTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindingAllGenes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindingAllGenes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/GeneCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/GeneCounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/LongestSideFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/LongestSideFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/NShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/NShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2Extended.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2Extended.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignmentRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignmentRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Point_Axis.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Point_Axis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/ReadFromCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/ReadFromCSV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/RecursiveFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/RecursiveFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TagFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TagFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TempFromMultiDatasets.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TempFromMultiDatasets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/CountryExport.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/ReadFromCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/ReadFromCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/TemperatureFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/TemperatureFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/WeatherStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/WeatherStats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +75,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="23" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="co.wali.Main" />
-      <module name="Java_Duke_University" />
+      <module name="Java_Duke_University.main" />
       <extension name="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
         <option name="IS_SUBST" value="false" />
@@ -178,7 +149,8 @@
       <workItem from="1739222428754" duration="241000" />
       <workItem from="1739223259698" duration="2107000" />
       <workItem from="1739225380167" duration="297000" />
-      <workItem from="1739225740151" duration="81000" />
+      <workItem from="1739225740151" duration="1778000" />
+      <workItem from="1739227538152" duration="103000" />
     </task>
     <task id="LOCAL-00001" summary="FirstCommit">
       <created>1719669302362</created>

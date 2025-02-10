@@ -2,9 +2,8 @@ plugins {
     id 'application'
 }
 
-group 'co.wali'
-version '1.0-SNAPSHOT'
-apply plugin: 'application'
+group = 'co.wali'
+version = '1.0-SNAPSHOT'
 
 application {
     // Define the main class for the application.
@@ -17,7 +16,7 @@ repositories {
 
 dependencies {
     implementation(files("libs/courserajava.jar"))
-//    implementation(files("libs/apache-csv.jar"))
+    // implementation(files("libs/apache-csv.jar"))
     implementation 'org.apache.commons:commons-csv:1.13.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
