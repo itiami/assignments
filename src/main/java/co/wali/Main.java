@@ -4,13 +4,13 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 public class Main {
-
-    private void isExists() {
+      private void isExists() {
         Path path = Paths.get("src/main/resources/dna/");
         if (Files.exists(path)) {
-            for (File f : path.toFile().listFiles()) {
+            for (File f : Objects.requireNonNull(path.toFile().listFiles())) {
                 System.out.println(f);
             }
         } else {
@@ -19,10 +19,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
         Part1 part1 = new Part1();
         Part2 part2 = new Part2();
         Part3 part3 = new Part3();
         Part4 part4 = new Part4();
+        CountryExport countryExport = new CountryExport();
+        ReadFromCSV readFromCSV = new ReadFromCSV();
         TemperatureFinder temperatureFinder = new TemperatureFinder();
 
 //        part1.findGene();
@@ -31,7 +34,13 @@ public class Main {
 //        part2.findGene();
 //        part3.testing();
 //        part4.run();
-        temperatureFinder.run();
+//        temperatureFinder.run();
+        countryExport.run();
+//        readFromCSV.run();
+
+        // Run your code
+        long endTime = System.currentTimeMillis();
+        System.out.println("Execution time: " + (endTime - startTime) + " ms");
     }
 }
 

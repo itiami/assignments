@@ -24,7 +24,9 @@ temperatureFromMultiFile();
         double lowestTemp = Double.MAX_VALUE;
         String lowestTempDate = "";
         double lowestHumidity = Double.MAX_VALUE;
+        double heightHumidity = Double.MIN_VALUE;
         String lowestHumidityDate = "";
+        String heightHumidityDate = "";
         int totalRows = 0;
         double tempSum = 0;
 
@@ -51,6 +53,11 @@ temperatureFromMultiFile();
                     lowestHumidity = humidity;
                     lowestHumidityDate = date;
                 }
+
+                if (humidity > heightHumidity){
+                    heightHumidity = humidity;
+                    heightHumidityDate = date;
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -58,7 +65,7 @@ temperatureFromMultiFile();
 
         double avgTemp = (totalRows > 0) ? tempSum / totalRows : 0.0;
 
-        return new WeatherStats(maxTemp, maxTempDate, lowestTemp, lowestTempDate, lowestHumidity, lowestHumidityDate, avgTemp, totalRows);
+        return new WeatherStats(maxTemp, maxTempDate, lowestTemp, lowestTempDate, lowestHumidity, heightHumidity, lowestHumidityDate, heightHumidityDate ,avgTemp, totalRows);
     }
 
     // Method to process multiple files
@@ -70,7 +77,9 @@ temperatureFromMultiFile();
         double lowestTemp = Double.MAX_VALUE;
         String lowestTempDate = "";
         double lowestHumidity = Double.MAX_VALUE;
+        double heightHumidity = Double.MIN_VALUE;
         String lowestHumidityDate = "";
+        String heightHumidityDate = "";
         double totalTempSum = 0;
         int totalRecords = 0;
 
@@ -92,6 +101,12 @@ temperatureFromMultiFile();
                 lowestHumidityDate = stats.getLowestHumidityDate();
             }
 
+            if (stats.getHeightHumidity() > heightHumidity){
+                heightHumidity = stats.getHeightHumidity();
+                heightHumidityDate = stats.getHeightHumidityDate();
+            }
+
+
             totalTempSum += stats.getAvgTemp() * stats.getTotalRecords();
             totalRecords += stats.getTotalRecords();
         }
@@ -101,6 +116,7 @@ temperatureFromMultiFile();
         System.out.println("Max Temperature: " + maxTemp + " ==> " + maxTempDate);
         System.out.println("Lowest Temperature: " + lowestTemp + " ==> " + lowestTempDate);
         System.out.println("Lowest Humidity: " + lowestHumidity + " ==> " + lowestHumidityDate);
+        System.out.println("Height Humidity: " + heightHumidity + "==> " + heightHumidityDate);
         System.out.println("Overall Average Temperature: " + avgTemperature);
     }
 
@@ -124,7 +140,7 @@ temperatureFromMultiFile();
     private static void listCSVFiles(File directory) {
         try (Stream<Path> paths = Files.walk(directory.toPath())) {
             paths.filter(Files::isRegularFile)
-                    .filter(path -> path.toString().endsWith(".csv")) // Only select CSV files
+                    .filter(path -> path.toString().endsWith(".csv"))
                     .forEach(path -> System.out.println("Found CSV: " + path.toAbsolutePath()));
         } catch (IOException e) {
             System.err.println("Error reading directory: " + directory.getAbsolutePath());

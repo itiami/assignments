@@ -17,10 +17,10 @@ public class ReadFromCSV {
 //        readCsvByScanner("src/main/resources/foods.csv");
 //        readCsvByBufferReader("src/main/resources/foods.csv");
 //        readCsvByCSVPerser("src/main/resources/foods.csv");
-//        tester("src/main/resources/exports_small.csv", "", "");
+        tester("src/main/resources/exportdata.csv", "", "");
         String csvFile = "src/main/resources/exports_small.csv"; // Path to your CSV file
         List<String> filterSearch = Arrays.asList("gold","diamonds");
-        searchFilter(csvFile, filterSearch);
+//        searchFilter(csvFile, filterSearch);
 //        countryInfo();
         FileResource fr = new FileResource("src/main/resources/exports_small.csv");
         CSVParser parser = fr.getCSVParser();
