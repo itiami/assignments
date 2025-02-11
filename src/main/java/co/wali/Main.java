@@ -25,7 +25,6 @@ public class Main {
         Part3 part3 = new Part3();
         Part4 part4 = new Part4();
         CountryExports countryExport = new CountryExports();
-        ReadFromCSV readFromCSV = new ReadFromCSV();
         TemperatureFinder temperatureFinder = new TemperatureFinder();
 
 //        part1.findGene();
@@ -36,7 +35,6 @@ public class Main {
 //        part4.run();
 //        temperatureFinder.run();
         countryExport.run();
-//        readFromCSV.run();
 
         // Run your code
         long endTime = System.currentTimeMillis();

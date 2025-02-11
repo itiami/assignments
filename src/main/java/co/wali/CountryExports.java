@@ -4,15 +4,24 @@ import edu.duke.*;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
 public class CountryExports {
 
     public void run() {
-//        fetchData_filterAsString("src/main/resources/exportdata.csv", "coffee", "cotton");
+        DirectoryResource directoryResource = new DirectoryResource();
         List<String> listString = Arrays.asList("coffee", "cotton");
-        fetchData_filterAsArray("src/main/resources/exportdata.csv", listString);
+        for (File file : directoryResource.selectedFiles()) {
+            FileResource fr = new FileResource(file);
+            CSVParser parser = fr.getCSVParser();
+            fetchData_filterAsArray(parser, listString);
+        }
+
+//        fetchData_filterAsString("src/main/resources/exportdata.csv", "coffee", "cotton");
+
+
     }
 
     private void fetchData_filterAsString(String filePath, String filter_1, String filter_2) {
@@ -34,14 +43,13 @@ public class CountryExports {
 
         } catch (Exception e) {
 //            e.printStackTrace();
-            CustomLogger.logError("Error Message: ",e);
+            CustomLogger.logError("Error Message: ", e);
         }
     }
 
-    private void fetchData_filterAsArray(String filePath, List<String> filterSearch) {
+    private void fetchData_filterAsArray(CSVParser parser, List<String> filterSearch) {
         try {
-            FileResource fr = new FileResource(filePath);
-            CSVParser parser = fr.getCSVParser();
+
 
             int idx = 1;
             for (CSVRecord record : parser) {
@@ -57,7 +65,7 @@ public class CountryExports {
                     String strRegex = value.replace("$", "").replace(",", "");
                     long amount = Long.parseLong(strRegex);
 //                    System.out.println((idx++) + "." + country + ": " + exports + ": " + value);
-                    System.out.println("SN_" + (idx++)+ ", RowNum: " + record.getRecordNumber() + ". " + country + ": " + exports + ": " + value);
+                    System.out.println("SN_" + (idx++) + ", RowNum: " + record.getRecordNumber() + ". " + country + ": " + exports + ": " + value);
                 }
 
             }
