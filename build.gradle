@@ -2,6 +2,7 @@ plugins {
     id 'application'
 }
 
+
 group = 'co.wali'
 version = '1.0-SNAPSHOT'
 
@@ -12,15 +13,20 @@ application {
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'  // This tells Gradle to look for JARs in the 'libs' folder
+    }
 }
 
 dependencies {
-    implementation(files("libs/courserajava.jar"))
+//    implementation(files("libs/courserajava.jar"))
     // implementation(files("libs/apache-csv.jar"))
+    implementation fileTree(dir: 'libs', include: ['*.jar']) // include all .jar files from the libs directory..
     implementation 'org.apache.commons:commons-csv:1.13.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'org.jsoup:jsoup:1.18.1'
+    implementation 'org.controlsfx:controlsfx:11.2.1'
 }
 
 test {
