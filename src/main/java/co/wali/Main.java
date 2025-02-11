@@ -24,7 +24,7 @@ public class Main {
         Part2 part2 = new Part2();
         Part3 part3 = new Part3();
         Part4 part4 = new Part4();
-        CountryExport countryExport = new CountryExport();
+        CountryExports countryExport = new CountryExports();
         ReadFromCSV readFromCSV = new ReadFromCSV();
         TemperatureFinder temperatureFinder = new TemperatureFinder();
 

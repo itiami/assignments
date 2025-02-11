@@ -7,7 +7,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.util.Arrays;
 import java.util.List;
 
-public class CountryExport {
+public class CountryExports {
 
     public void run() {
 //        fetchData_filterAsString("src/main/resources/exportdata.csv", "coffee", "cotton");
@@ -33,7 +33,8 @@ public class CountryExport {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+            CustomLogger.logError("Error Message: ",e);
         }
     }
 
