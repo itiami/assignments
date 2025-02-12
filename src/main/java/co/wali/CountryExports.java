@@ -5,26 +5,18 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class CountryExports {
 
     public void run() {
-//        DirectoryResource directoryResource = new DirectoryResource();
-//        List<String> listString = Arrays.asList("coffee", "cotton");
-//        for (File file : directoryResource.selectedFiles()) {
-//            FileResource fr = new FileResource(file);
-//            CSVParser parser = fr.getCSVParser();
-//            System.out.println(countryInfo(parser, "Germany"));
-//        }
-
         FileResource fr = new FileResource();
         CSVParser parser = fr.getCSVParser();
 //        System.out.println(countryInfo(parser, "Germany"));
 //        listExportersTwoProducts(parser, "gold", "diamonds");
-//        fetchData_filterAsArray(parser, Arrays.asList("gold"));
-        bigExporters(parser, "$999,999,999,");
+//        fetchData_filterAsArray(parser, Arrays.asList());
+        fetchData_filterAsArray(parser, Arrays.asList("gold", "diamonds"));
+//        bigExporters(parser, "$999,999,999,");
     }
 
     private String countryInfo(CSVParser parser, String country) {
@@ -39,14 +31,14 @@ public class CountryExports {
         return "NOT FOUND";
     }
 
-    private void listExportersTwoProducts (CSVParser parser, String exportItem1, String exportItem2 ) {
+    private void listExportersTwoProducts(CSVParser parser, String exportItem1, String exportItem2) {
         try {
             int idx = 1;
             for (CSVRecord record : parser) {
                 String country;
                 String exports;
                 String value;
-                if (record.get("Exports").contains(exportItem1) && record.get("Exports").contains(exportItem2 )) {
+                if (record.get("Exports").contains(exportItem1) && record.get("Exports").contains(exportItem2)) {
                     country = record.get("Country");
                     exports = record.get("Exports");
                     value = record.get("Value (dollars)");
@@ -61,19 +53,31 @@ public class CountryExports {
     }
 
 
-    private void bigExporters  (CSVParser parser, String amount ) {
+    private void bigExporters(CSVParser parser, String amount) {
         try {
-            int idx = 1;
+            List<CSVRecord> records = new ArrayList<>();
+            long parseAmount = Long.parseLong(amount.replace("$", "").replace(",", ""));
             for (CSVRecord record : parser) {
-                String country = record.get("Country");
-                String exports = record.get("Exports");
-                long value = Long.parseLong(record.get("Value (dollars)").replace("$","").replace(",",""));
-
-                long parseAmount = Long.parseLong(amount.replace("$","").replace(",",""));
-
+                long value = Long.parseLong(record.get("Value (dollars)").replace("$", "").replace(",", ""));
                 if (value > parseAmount) {
-                    System.out.println((idx++) + ". " + country + ": " + record.get("Value (dollars)"));
+                    records.add(record);
                 }
+            }
+
+//          Data Sorting............
+//          Method_1. using - (Minus sign)
+//          records.sort(Comparator.comparingLong(record -> -Long.parseLong(record.get("Value (dollars)").replace("$", "").replace(",", ""))));
+//          Method_2. using Comparator.reverOrder()
+//          records.sort(Comparator.comparing(record -> Long.parseLong(record.get("Value (dollars)").replace("$", "").replace(",", "")), Comparator.reverseOrder()));
+//          Method_3. Collections.sort(records, (a, b) ->
+            records.sort((a, b) -> Long.compare(
+                    Long.parseLong(b.get("Value (dollars)").replace("$", "").replace(",", "")),
+                    Long.parseLong(a.get("Value (dollars)").replace("$", "").replace(",", ""))));
+
+
+            int idx = 1;
+            for (CSVRecord record : records) {
+                System.out.println(idx++ + ". " + "S/N: " + record.getRecordNumber()  + record.get("Country") + ": " + record.get("Value (dollars)"));
             }
 
         } catch (Exception e) {
@@ -82,26 +86,27 @@ public class CountryExports {
         }
     }
 
+
     private void fetchData_filterAsArray(CSVParser parser, List<String> filterSearch) {
         try {
+            List<CSVRecord> records = new ArrayList<>();
             int idx = 1;
             for (CSVRecord record : parser) {
-                String country;
-                String exports;
-                String value;
-                country = record.get("Country");
-                exports = record.get("Exports");
-                value = record.get("Value (dollars)");
-                boolean matches = filterSearch.stream().allMatch(exports::contains);
+                boolean matches = filterSearch.stream().allMatch(record.get("Exports")::contains);
+                long value = Long.parseLong(record.get("Value (dollars)").replace("$", "").replace(",", ""));
 
                 if (matches) {
-                    String strRegex = value.replace("$", "").replace(",", "");
-                    long amount = Long.parseLong(strRegex);
-//                    System.out.println((idx++) + "." + country + ": " + exports + ": " + value);
-//                    System.out.println("SN_" + (idx++) + ", RowNum: " + record.getRecordNumber() + ". " + country + ": " + exports + ": " + value);
-                    System.out.println(record.size());
+                    records.add(record);
                 }
+            }
 
+            records.sort((a,b)-> Long.compare(
+                    Long.parseLong(b.get("Value (dollars)").replace("$", "").replace(",", "")),
+                    Long.parseLong(a.get("Value (dollars)").replace("$", "").replace(",", ""))
+            ));
+
+            for (CSVRecord record: records){
+                System.out.println(idx++ + ". " + record.get("Country") + ": " + record.get("Value (dollars)"));
             }
 
         } catch (Exception e) {
