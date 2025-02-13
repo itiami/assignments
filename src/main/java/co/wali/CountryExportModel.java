@@ -4,9 +4,11 @@ public class CountryExportModel {
 
     private String country;
     private String exports;
-    private String value;
+    private long value;
 
-    public CountryExportModel(String country, String exports, String value){
+    public CountryExportModel(){};
+
+    public CountryExportModel(String country, String exports, long value){
         this.country = country;
         this.exports = exports;
         this.value = value;
@@ -20,7 +22,12 @@ public class CountryExportModel {
         return exports;
     }
 
-    public String getValue() {
+    public long getValue() {
         return value;
+    }
+
+    @Override
+    public String toString(){
+        return "Country: " + country + ", " + "Exports: " + exports + ", " + "Value: " + value;
     }
 }
