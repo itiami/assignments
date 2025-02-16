@@ -72,6 +72,12 @@ public class ReadFileByApacheLib {
                             data.getCountry() +
                             ", " + currency.format(data.getValue()));
                 }
+                /*
+                1: China, $2,252,000,000,000.00
+                2: European Union, $2,173,000,000,000.00
+                3: Germany, $1,547,000,000,000.00
+                4: United States, $1,610,000,000,000.00
+                */
             }
 
         }catch (Exception e){
