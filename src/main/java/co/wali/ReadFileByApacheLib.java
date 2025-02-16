@@ -6,9 +6,11 @@ import org.apache.commons.csv.CSVRecord;
 import javax.swing.*;
 import java.io.*;
 import java.net.URL;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 public class ReadFileByApacheLib {
     public void run(){
@@ -35,6 +37,7 @@ public class ReadFileByApacheLib {
     }
 
     private void byJavaIoReader(){
+        NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.US);
         List<CountryExportModel> countries = new ArrayList<>();
         String csvFile_1 = "src/main/resources/exports_small.csv";
         String csvFile_2 = "src/main/resources/exportdata.csv";
@@ -62,9 +65,13 @@ public class ReadFileByApacheLib {
             }
 
 //            System.out.println("Parsed Countries: " + countries);
-            countries.sort(Comparator.comparing(CountryExportModel::getValue).reversed());
+//            countries.sort(Comparator.comparing(CountryExportModel::getValue).reversed());
             for (CountryExportModel data: countries){
-                System.out.println((idx++) + ": " + data.getCountry() + " ===> " + data.getValue());
+                if (data.getValue() >= 1_000_000_000_000L){
+                    System.out.println(idx++ + ": " +
+                            data.getCountry() +
+                            ", " + currency.format(data.getValue()));
+                }
             }
 
         }catch (Exception e){

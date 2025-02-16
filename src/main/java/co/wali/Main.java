@@ -36,8 +36,8 @@ public class Main {
 //        part3.testing();
 //        part4.run();
 //        temperatureFinder.run();
-        countryExport.run();
-//        readFileByApacheLib.run();
+//        countryExport.run();
+        readFileByApacheLib.run();
 
         // Run your code
         long endTime = System.currentTimeMillis();
