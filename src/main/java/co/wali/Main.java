@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 public class Main {
-      private void isExists() {
+    private void isExists() {
         Path path = Paths.get("src/main/resources/dna/");
         if (Files.exists(path)) {
             for (File f : Objects.requireNonNull(path.toFile().listFiles())) {
@@ -27,6 +27,7 @@ public class Main {
         CountryExports countryExport = new CountryExports();
         TemperatureFinder temperatureFinder = new TemperatureFinder();
         ReadFileByApacheLib readFileByApacheLib = new ReadFileByApacheLib();
+        BabyBirths babyBirths = new BabyBirths();
 
 
 //        part1.findGene();
@@ -37,8 +38,8 @@ public class Main {
 //        part4.run();
 //        temperatureFinder.run();
 //        countryExport.run();
-        readFileByApacheLib.run();
-
+//        readFileByApacheLib.run();
+        babyBirths.run();
         // Run your code
         long endTime = System.currentTimeMillis();
         System.out.println("Execution time: " + (endTime - startTime) + " ms");
