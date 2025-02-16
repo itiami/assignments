@@ -26,6 +26,8 @@ public class Main {
         Part4 part4 = new Part4();
         CountryExports countryExport = new CountryExports();
         TemperatureFinder temperatureFinder = new TemperatureFinder();
+        ReadFileByApacheLib readFileByApacheLib = new ReadFileByApacheLib();
+
 
 //        part1.findGene();
 //        part1.testSimpleGene();
@@ -35,6 +37,7 @@ public class Main {
 //        part4.run();
 //        temperatureFinder.run();
         countryExport.run();
+//        readFileByApacheLib.run();
 
         // Run your code
         long endTime = System.currentTimeMillis();

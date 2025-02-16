@@ -18,49 +18,14 @@ public class CountryExports {
         FileResource fr = new FileResource();
         CSVParser parser = fr.getCSVParser();
 //        System.out.println(countryInfo(parser, "Germany"));
-//        listExportersTwoProducts(parser, "gold", "diamonds");
+//        listExportersTwoProducts(parser, "cocoa");
 //        fetchData_filterAsArray(parser, Arrays.asList());
-//        fetchData_filterAsArray(parser, Arrays.asList("gold", "diamonds"));
-//        bigExporters(parser, "$999,999,999,");
-        byReader();
+//        fetchData_filterAsArray(parser, Arrays.asList("cocoa"));
+        bigExporters(parser, "$999,999,999,");
     }
 
 
-    private void byReader(){
-        List<CountryExportModel> countries = new ArrayList<>();
-        String csvFile_1 = "src/main/resources/exports_small.csv";
-        try {
-            Reader reader = new FileReader(csvFile_1);
-            Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
-                    .setHeader("Country", "Exports", "Value (dollars)")
-                    .setSkipHeaderRecord(true)
-                    .get()
-                    .parse(reader);
 
-            for (CSVRecord record: records){
-                String country = record.get("Country");
-                String exports = record.get("Exports").toLowerCase();
-                String value = record.get("Value (dollars)");
-
-                // to check if the value is a number before parsing..
-                if (!value.matches(".*\\d.*")){
-                    continue;
-                }
-
-                long amount = Long.parseLong(value.replace("$", "").replace(",", ""));
-             countries.add(new CountryExportModel(country, exports, amount));
-            }
-
-//            System.out.println("Parsed Countries: " + countries);
-            countries.sort(Comparator.comparing(CountryExportModel::getValue).reversed());
-            for (CountryExportModel lst: countries){
-                System.out.println(lst);
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
 
     private static long parseValue(String value) {
         value = value.replace("$", "").replace(",", ""); // Remove dollar sign and commas
@@ -79,14 +44,14 @@ public class CountryExports {
         return "NOT FOUND";
     }
 
-    private void listExportersTwoProducts(CSVParser parser, String exportItem1, String exportItem2) {
+    private void listExportersTwoProducts(CSVParser parser, String exportItem1) {
         try {
             int idx = 1;
             for (CSVRecord record : parser) {
                 String country;
                 String exports;
                 String value;
-                if (record.get("Exports").contains(exportItem1) && record.get("Exports").contains(exportItem2)) {
+                if (record.get("Exports").contains(exportItem1)) {
                     country = record.get("Country");
                     exports = record.get("Exports");
                     value = record.get("Value (dollars)");
@@ -149,10 +114,10 @@ public class CountryExports {
             }
 
 
-            records.sort((a,b)-> Long.compare(
-                    Long.parseLong(b.get("Value (dollars)").replace("$", "").replace(",", "")),
-                    Long.parseLong(a.get("Value (dollars)").replace("$", "").replace(",", ""))
-            ));
+//            records.sort((a,b)-> Long.compare(
+//                    Long.parseLong(b.get("Value (dollars)").replace("$", "").replace(",", "")),
+//                    Long.parseLong(a.get("Value (dollars)").replace("$", "").replace(",", ""))
+//            ));
             
 
             for (CSVRecord record: records){
