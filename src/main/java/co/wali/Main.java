@@ -40,8 +40,8 @@ public class Main {
 //        temperatureFinder.run();
 //        countryExport.run();
 //        readFileByApacheLib.run();
-//        babyBirths.run();
-        selectFile.run();
+//        selectFile.run();
+        babyBirths.run();
         long endTime = System.currentTimeMillis();
         System.out.println("Execution time: " + (endTime - startTime) + " ms");
     }

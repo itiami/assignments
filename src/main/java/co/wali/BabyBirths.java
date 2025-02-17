@@ -52,7 +52,7 @@ public class BabyBirths {
 
                 for(File file: selectedFiles){
                     System.out.println("Reading File: " + file.getAbsolutePath());
-                    readFile(file);
+                    printNames(file);
                 }
             }
         });
@@ -71,7 +71,30 @@ public class BabyBirths {
         }
     }
 
-    private void printNames() {
+
+    private void getRank(File file, String name){
+        int rank = 0;
+        int totalBorn = 0;
+
+        try {
+            Reader reader = new FileReader(file);
+            Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
+                    .setSkipHeaderRecord(true)
+                    .get()
+                    .parse(reader);
+            for (CSVRecord record : records) {
+                Integer intBorn = Integer.parseInt(record.get(2));
+                totalBorn += intBorn;
+
+            }
+
+        } catch (Exception e) {
+            CustomLogger.logError("Error Found", e);
+        }
+
+    }
+
+    private void printNames(File file) {
 //        String csvFile_1 = "src/main/resources/module_5/us_babynames_test/example-small.csv";
         String csvFile_1 = "src/main/resources/module_5/us_babynames_by_year/yob2014.csv";
         int idx = 1;
@@ -82,7 +105,7 @@ public class BabyBirths {
         int totalBorn = 0;
 
         try {
-            Reader reader = new FileReader(csvFile_1);
+            Reader reader = new FileReader(file);
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
                     .setSkipHeaderRecord(true)
                     .get()
