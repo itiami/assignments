@@ -28,6 +28,7 @@ public class Main {
         TemperatureFinder temperatureFinder = new TemperatureFinder();
         ReadFileByApacheLib readFileByApacheLib = new ReadFileByApacheLib();
         BabyBirths babyBirths = new BabyBirths();
+        SelectCsvFromResourcesDir selectFile = new SelectCsvFromResourcesDir();
 
 
 //        part1.findGene();
@@ -39,8 +40,8 @@ public class Main {
 //        temperatureFinder.run();
 //        countryExport.run();
 //        readFileByApacheLib.run();
-        babyBirths.run();
-        // Run your code
+//        babyBirths.run();
+        selectFile.run();
         long endTime = System.currentTimeMillis();
         System.out.println("Execution time: " + (endTime - startTime) + " ms");
     }

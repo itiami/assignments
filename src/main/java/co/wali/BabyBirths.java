@@ -3,17 +3,84 @@ package co.wali;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+import java.awt.*;
+import java.io.File;
 import java.io.FileReader;
 import java.io.Reader;
+import java.net.URL;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BabyBirths {
     public void run() {
-        printNames();
+//        printNames();
+        selectFile(0.7, 0.6);
+    }
+
+    private void selectFile(double widthPercent, double heightPercent){
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int) (screenSize.width * widthPercent);
+        int height = (int) (screenSize.height * heightPercent);
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); // Windows Look and Feel
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        SwingUtilities.invokeLater(()->{
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setMultiSelectionEnabled(true);
+            fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            fileChooser.setDialogTitle("Select CSV File(s)");
+            fileChooser.setPreferredSize(new Dimension(width, height));
+
+            String resourcesPath = Paths.get("src", "main", "resources").toAbsolutePath().toString();
+            File resourcesDir = new File(resourcesPath);
+            if (resourcesDir.exists() && resourcesDir.isDirectory()) {
+                fileChooser.setCurrentDirectory(resourcesDir);
+            }
+
+            int result = fileChooser.showOpenDialog(null);
+            if (result == JFileChooser.APPROVE_OPTION){
+                File[] selectedFiles = fileChooser.getSelectedFiles();
+
+                for(File file: selectedFiles){
+                    System.out.println("Reading File: " + file.getAbsolutePath());
+                    readFile(file);
+                }
+            }
+        });
+    }
+
+    private void readFile(File file){
+        try {
+            Reader reader = new FileReader(file);
+            Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder().setSkipHeaderRecord(true).get().parse(reader);
+
+            for (CSVRecord record: records){
+                System.out.println(record);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void printNames() {
-        String csvFile_1 = "src/main/resources/module_5/example-small.csv";
+//        String csvFile_1 = "src/main/resources/module_5/us_babynames_test/example-small.csv";
+        String csvFile_1 = "src/main/resources/module_5/us_babynames_by_year/yob2014.csv";
         int idx = 1;
+        List<String> girls = new ArrayList<>();
+        List<String> boys = new ArrayList<>();
+        int totalBoys = 0;
+        int totalGirls = 0;
+        int totalBorn = 0;
+
         try {
             Reader reader = new FileReader(csvFile_1);
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
@@ -21,12 +88,22 @@ public class BabyBirths {
                     .get()
                     .parse(reader);
             for (CSVRecord record : records) {
+                Integer intBorn = Integer.parseInt(record.get(2));
+                totalBorn += intBorn;
+
                 if (record.get(1).equals("M")){
-                    System.out.println(idx++ + ": " + record.get(0));
+                    boys.add(idx++ + ": " + record.get(0));
+                    totalBoys += intBorn;
+
+                }
+                if (record.get(1).equals("F")){
+                    girls.add(idx++ + ": " + record.get(0));
+                    totalGirls += intBorn;
                 }
             }
+            System.out.println("total BoysName: " + totalBoys + " total GirlsName: " + totalGirls + " total Name: " + totalBorn);
         } catch (Exception e) {
-            e.printStackTrace();
+            CustomLogger.logError("Error Found", e);
         }
     }
 }

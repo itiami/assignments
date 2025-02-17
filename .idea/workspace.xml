@@ -5,14 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/BabyBirths.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/BabyBirths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/CountryExportModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/CountryExportModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/CountryExports.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/CountryExports.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/CustomLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/CustomLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/FileSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/FileSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindGeneSimpleAndTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindGeneSimpleAndTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindingAllGenes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindingAllGenes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/GeneCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/GeneCounter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/LongestSideFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/LongestSideFinder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/NShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/NShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2Extended.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2Extended.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignmentRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignmentRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Point_Axis.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Point_Axis.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/ReadFileByApacheLib.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/ReadFileByApacheLib.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ReadFileByApacheLib.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/RecursiveFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/RecursiveFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TagFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TagFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BabyBirths.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BabyBirths.class.uniqueId0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/ReadFileByApacheLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/ReadFileByApacheLib.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
