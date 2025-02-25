@@ -13,16 +13,15 @@ import java.net.URL;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
-import java.util.Optional;
 
 public class BabyBirths {
     public void run() {
 //        printNames();
 //        selectFile(0.7, 0.6);
 //        System.out.println(getRank(1880, "Minnie", ""));
+        getRank(2012, "", "F");
 
         whatIsNameInYear("Isabella", 2012, 2014, "F");
     }
@@ -71,11 +70,13 @@ public class BabyBirths {
     }
 
 
-    private String getRank(int year, String name, String gender) {
-        File file = new File("src/main/resources/module_5/us_babynames_by_year/yob" + year + ".csv");
-        int rank = 0;
+    private void getRank(int year, String name, String gender) {
+//        File file = new File("src/main/resources/module_5/us_babynames_by_year/yob" + year + ".csv");
+        File file = new File("src/main/resources/module_5/testing/yob" + year + "short.csv");
+        int rank = 1;
         int totalBorn = 0;
-        List<String> data = new ArrayList<>();
+        List<CSVRecord> data = new ArrayList<>();
+
         try {
             Reader reader = new FileReader(file);
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
@@ -85,17 +86,33 @@ public class BabyBirths {
             for (CSVRecord record : records) {
                 int born = Integer.parseInt(record.get(2));
                 totalBorn += born;
-                if (record.get(0).contains(name) && record.get(1).contains(gender)) {
-                    rank += Integer.parseInt(record.get(2));
-                    data.add(Arrays.toString(record.values()));
+
+
+                if (record.get(1).equalsIgnoreCase(gender)){
+                    data.add(record);
                 }
             }
+
+            // Sorting data by birth count in descending order
+            data.sort((a, b) -> Integer.compare(
+                    Integer.parseInt(b.get(2)), // Sorting in descending order
+                    Integer.parseInt(a.get(2))
+            ));
+
+            for (CSVRecord record : data) {
+                System.out.println(rank + ". " + record.get(0) + " - " + record.get(2));
+                if (record.get(0).equalsIgnoreCase(name)) {
+                    System.out.println("Rank of " + name + " in " + year + ": " + rank);
+                    break;
+                }
+                rank++;
+            }
+
+            data.forEach(System.out::println);
 
         } catch (Exception e) {
             CustomLogger.logError("Error Found", e);
         }
-        data.add(String.valueOf(rank));
-        return data.toString().equals("") ? "NO NAME" : data.toString();
     }
 
     private void selectFile(double widthPercent, double heightPercent) {

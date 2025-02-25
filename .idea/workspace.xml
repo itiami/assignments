@@ -34,23 +34,17 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TagFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TagFinder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/shape1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/shape1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/shape2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/shape2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/shape3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/shape3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/Java_Duke_University-1.0-SNAPSHOT.tar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/Java_Duke_University-1.0-SNAPSHOT.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Java_Duke_University-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/scripts/Java_Duke_University" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/scripts/Java_Duke_University.bat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BabyBirths.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BabyBirths.class.uniqueId0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

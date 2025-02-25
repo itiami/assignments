@@ -1,0 +1,8 @@
+Error Found
+java.lang.IllegalStateException: No header mapping was specified, the record values can't be accessed by name
+	at org.apache.commons.csv.CSVRecord.get(CSVRecord.java:128)
+	at co.wali.BabyBirths.lambda$getRank$1(BabyBirths.java:102)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at co.wali.BabyBirths.getRank(BabyBirths.java:102)
+	at co.wali.BabyBirths.run(BabyBirths.java:24)
+	at co.wali.Main.main(Main.java:44)
