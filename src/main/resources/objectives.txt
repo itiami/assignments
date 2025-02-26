@@ -1,0 +1,3 @@
+1. Get Total Birth from a singe file or Multiple File..
+2. Rank of the name in  file/files for the given gender i.g getRank("Mason", "F")
+3.

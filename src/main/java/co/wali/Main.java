@@ -20,15 +20,16 @@ public class Main {
 
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        Part1 part1 = new Part1();
-        Part2 part2 = new Part2();
-        Part3 part3 = new Part3();
-        Part4 part4 = new Part4();
-        CountryExports countryExport = new CountryExports();
-        TemperatureFinder temperatureFinder = new TemperatureFinder();
-        ReadFileByApacheLib readFileByApacheLib = new ReadFileByApacheLib();
+//        Part1 part1 = new Part1();
+//        Part2 part2 = new Part2();
+//        Part3 part3 = new Part3();
+//        Part4 part4 = new Part4();
+//        CountryExports countryExport = new CountryExports();
+//        TemperatureFinder temperatureFinder = new TemperatureFinder();
+//        ReadFileByApacheLib readFileByApacheLib = new ReadFileByApacheLib();
+//        SelectCsvFromResourcesDir selectFile = new SelectCsvFromResourcesDir();
+//        WebScraperToExcel webScraping = new WebScraperToExcel();
         BabyBirths babyBirths = new BabyBirths();
-        SelectCsvFromResourcesDir selectFile = new SelectCsvFromResourcesDir();
 
 
 //        part1.findGene();
@@ -41,9 +42,8 @@ public class Main {
 //        countryExport.run();
 //        readFileByApacheLib.run();
 //        selectFile.run();
-//        babyBirths.run();
-        WebScraperToExcel webScraping = new WebScraperToExcel();
-        webScraping.run();
+//        webScraping.run();
+        babyBirths.run();
 
 
         long endTime = System.currentTimeMillis();

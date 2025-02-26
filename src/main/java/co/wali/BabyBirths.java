@@ -21,98 +21,8 @@ public class BabyBirths {
 //        printNames();
 //        selectFile(0.7, 0.6);
 //        System.out.println(getRank(1880, "Minnie", ""));
-        getRank(2012, "", "F");
-
-        whatIsNameInYear("Isabella", 2012, 2014, "F");
-    }
-
-
-    private void whatIsNameInYear(String name, int year, int newYear, String gender) {
-        File yearOneFile = new File("src/main/resources/module_5/us_babynames_by_year/yob" + year + ".csv");
-        File yearTowFile = new File("src/main/resources/module_5/us_babynames_by_year/yob" + newYear + ".csv");
-        int rankOne = 0;
-        int rankTwo = 0;
-        List<String> yearOneData = new ArrayList<>();
-        List<String> yearTworData = new ArrayList<>();
-
-        try {
-            Iterable<CSVRecord> yearOneRecords = CSVFormat.DEFAULT.builder()
-                    .setSkipHeaderRecord(true)
-                    .get()
-                    .parse(new FileReader(yearOneFile));
-
-            Iterable<CSVRecord> yearTwoRecords = CSVFormat.DEFAULT.builder()
-                    .setSkipHeaderRecord(true)
-                    .get()
-                    .parse(new FileReader(yearTowFile));
-
-
-            for (CSVRecord record : yearOneRecords) {
-                if (record.get(0).equals(name) && record.get(1).equals(gender)) {
-                    yearOneData.add(Arrays.toString(record.values()));
-                }
-            }
-
-
-            for (CSVRecord record : yearTwoRecords) {
-                if (record.get(0).equals(name) && record.get(1).equals(gender)) {
-                    yearTworData.add(Arrays.toString(record.values()));
-                }
-            }
-
-            System.out.println(yearOneData);
-            System.out.println(yearTworData);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
-
-    private void getRank(int year, String name, String gender) {
-//        File file = new File("src/main/resources/module_5/us_babynames_by_year/yob" + year + ".csv");
-        File file = new File("src/main/resources/module_5/testing/yob" + year + "short.csv");
-        int rank = 1;
-        int totalBorn = 0;
-        List<CSVRecord> data = new ArrayList<>();
-
-        try {
-            Reader reader = new FileReader(file);
-            Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
-                    .setSkipHeaderRecord(true)
-                    .get()
-                    .parse(reader);
-            for (CSVRecord record : records) {
-                int born = Integer.parseInt(record.get(2));
-                totalBorn += born;
-
-
-                if (record.get(1).equalsIgnoreCase(gender)){
-                    data.add(record);
-                }
-            }
-
-            // Sorting data by birth count in descending order
-            data.sort((a, b) -> Integer.compare(
-                    Integer.parseInt(b.get(2)), // Sorting in descending order
-                    Integer.parseInt(a.get(2))
-            ));
-
-            for (CSVRecord record : data) {
-                System.out.println(rank + ". " + record.get(0) + " - " + record.get(2));
-                if (record.get(0).equalsIgnoreCase(name)) {
-                    System.out.println("Rank of " + name + " in " + year + ": " + rank);
-                    break;
-                }
-                rank++;
-            }
-
-            data.forEach(System.out::println);
-
-        } catch (Exception e) {
-            CustomLogger.logError("Error Found", e);
-        }
+//        whatIsNameInYear("Isabella", 2012, 2014, "F");
+        selectFile(0.5, 0.5);
     }
 
     private void selectFile(double widthPercent, double heightPercent) {
@@ -144,10 +54,57 @@ public class BabyBirths {
                 File[] selectedFiles = fileChooser.getSelectedFiles();
 
                 for (File file : selectedFiles) {
-                    printNames(file);
+                    getRank(file, "Margaret","F");
                 }
             }
         });
+    }
+
+
+    private void getRank(File file ,String name, String gender) {
+//        File file = new File("src/main/resources/module_5/us_babynames_by_year/yob" + year + ".csv");
+//        File file = new File("src/main/resources/module_5/testing/yob2012short.csv");
+        int rank = 1;
+        int totalBorn = 0;
+        List<CSVRecord> data = new ArrayList<>();
+
+        try {
+            Reader reader = new FileReader(file);
+            Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
+                    .setSkipHeaderRecord(true)
+                    .get()
+                    .parse(reader);
+            for (CSVRecord record : records) {
+                int born = Integer.parseInt(record.get(2));
+                totalBorn += born;
+                if (record.get(1).equalsIgnoreCase(gender)){
+                    data.add(record);
+                }
+            }
+
+            // Sorting data by birth count in descending order
+            data.sort((a, b) -> Integer.compare(
+                    Integer.parseInt(b.get(2)), // Sorting in descending order
+                    Integer.parseInt(a.get(2))
+            ));
+
+            String msg = "";
+
+            for (CSVRecord record : data) {
+                System.out.println(record.get(0).contains(name));
+                if (record.get(0).contains(name) && record.get(2).contains(gender)) {
+                    System.out.println("Rank of " + name + ": " + rank);
+                }else {
+                    msg = name + " Does not exists in the File..";
+                }
+                rank++;
+            }
+
+            System.out.println(msg);
+
+        } catch (Exception e) {
+            CustomLogger.logError("Error Found", e);
+        }
     }
 
     private void readFile(File file) {
@@ -198,4 +155,46 @@ public class BabyBirths {
             CustomLogger.logError("Error Found", e);
         }
     }
+
+    private void whatIsNameInYear(String name, int year, int newYear, String gender) {
+        File yearOneFile = new File("src/main/resources/module_5/us_babynames_by_year/yob" + year + ".csv");
+        File yearTowFile = new File("src/main/resources/module_5/us_babynames_by_year/yob" + newYear + ".csv");
+        int rankOne = 0;
+        int rankTwo = 0;
+        List<String> yearOneData = new ArrayList<>();
+        List<String> yearTworData = new ArrayList<>();
+
+        try {
+            Iterable<CSVRecord> yearOneRecords = CSVFormat.DEFAULT.builder()
+                    .setSkipHeaderRecord(true)
+                    .get()
+                    .parse(new FileReader(yearOneFile));
+
+            Iterable<CSVRecord> yearTwoRecords = CSVFormat.DEFAULT.builder()
+                    .setSkipHeaderRecord(true)
+                    .get()
+                    .parse(new FileReader(yearTowFile));
+
+
+            for (CSVRecord record : yearOneRecords) {
+                if (record.get(0).equals(name) && record.get(1).equals(gender)) {
+                    yearOneData.add(Arrays.toString(record.values()));
+                }
+            }
+
+
+            for (CSVRecord record : yearTwoRecords) {
+                if (record.get(0).equals(name) && record.get(1).equals(gender)) {
+                    yearTworData.add(Arrays.toString(record.values()));
+                }
+            }
+
+            System.out.println(yearOneData);
+            System.out.println(yearTworData);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
