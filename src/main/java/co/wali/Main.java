@@ -41,7 +41,11 @@ public class Main {
 //        countryExport.run();
 //        readFileByApacheLib.run();
 //        selectFile.run();
-        babyBirths.run();
+//        babyBirths.run();
+        WebScraperToExcel webScraping = new WebScraperToExcel();
+        webScraping.run();
+
+
         long endTime = System.currentTimeMillis();
         System.out.println("Execution time: " + (endTime - startTime) + " ms");
     }

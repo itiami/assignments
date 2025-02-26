@@ -28,6 +28,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.18.1'
     implementation 'org.controlsfx:controlsfx:11.2.1'
     implementation 'org.json:json:20250107'
+    implementation 'org.apache.poi:poi-ooxml:5.4.0'
 }
 
 test {
