@@ -1,53 +1,49 @@
 package co.wali;
 
-import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Stream;
 
 public class Main {
-    private void isExists() {
-        Path path = Paths.get("src/main/resources/dna/");
-        if (Files.exists(path)) {
-            for (File f : Objects.requireNonNull(path.toFile().listFiles())) {
-                System.out.println(f);
-            }
-        } else {
-            System.out.println("is null");
+    // Configurable path as a constant for better maintainability
+    private static final String RESOURCE_DIR = "src/main/resources/dna/";
+
+    private void listDirectoryContents() {
+        Path path = Paths.get(RESOURCE_DIR);
+        try (Stream<Path> files = Files.list(path)) {
+            files.forEach(System.out::println);
+        } catch (IOException e) {
+            System.out.println("Directory does not exist or cannot be accessed: " + path);
+            // Log the exception if a logging framework is available, e.g., log.error("Error accessing directory", e);
         }
     }
 
+    // Modular method to run tasks, reducing main method clutter
+    private static void runTask(Runnable task, String taskName) {
+        System.out.println("Running " + taskName + "...");
+        task.run();
+    }
+
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
-//        Part1 part1 = new Part1();
-//        Part2 part2 = new Part2();
-//        Part3 part3 = new Part3();
-//        Part4 part4 = new Part4();
-//        CountryExports countryExport = new CountryExports();
-//        TemperatureFinder temperatureFinder = new TemperatureFinder();
-//        ReadFileByApacheLib readFileByApacheLib = new ReadFileByApacheLib();
-//        SelectCsvFromResourcesDir selectFile = new SelectCsvFromResourcesDir();
-//        WebScraperToExcel webScraping = new WebScraperToExcel();
+        long startTime = System.nanoTime(); // Higher precision than currentTimeMillis
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
+
+
+//        Main main = new Main();
+//        main.listDirectoryContents(); // Optimized directory listing
+
+        // Example of running a single task (uncomment and adjust as needed)
         BabyBirths babyBirths = new BabyBirths();
-
-
-//        part1.findGene();
-//        part1.testSimpleGene();
-//        part2.testSimpleGene();
-//        part2.findGene();
-//        part3.testing();
-//        part4.run();
-//        temperatureFinder.run();
-//        countryExport.run();
-//        readFileByApacheLib.run();
-//        selectFile.run();
-//        webScraping.run();
-        babyBirths.run();
-
-
-        long endTime = System.currentTimeMillis();
-        System.out.println("Execution time: " + (endTime - startTime) + " ms");
+//        babyBirths.run();
+//        runTask(babyBirths::run, "BabyBirths");
+        executorService.execute(babyBirths::run);
+        executorService.shutdown();
+        long endTime = System.nanoTime();
+        double executionTimeMs = (endTime - startTime) / 1_000_000.0; // Convert nanoseconds to milliseconds
+        System.out.printf("Execution time: %.3f ms%n", executionTimeMs);
     }
 }
-

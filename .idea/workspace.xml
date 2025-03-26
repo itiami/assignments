@@ -5,7 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/BabyBirths.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/BabyBirths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/CountryExportModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/CountryExportModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/CountryExports.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/CountryExports.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/CustomLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/CustomLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/FileSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/FileSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindGeneSimpleAndTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindGeneSimpleAndTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindingAllGenes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/FindingAllGenes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/GeneCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/GeneCounter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JavaFun3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/JobModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/JobModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/LongestSideFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/LongestSideFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/NShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/NShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2Extended.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part2Extended.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Part4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignmentRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/PerimeterAssignmentRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/Point_Axis.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/Point_Axis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/ReadFileByApacheLib.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/ReadFileByApacheLib.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/RecursiveFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/RecursiveFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/SelectCsvFromResourcesDir.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/SelectCsvFromResourcesDir.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TagFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TagFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/WebScraperToExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/WebScraperToExcel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/shape1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/shape1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/shape2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/shape2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/shape3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/shape3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BabyBirths.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BabyBirths.class.uniqueId0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" afterDir="false" />
     </list>
@@ -18,6 +67,26 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java_Duke_University" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,27 +112,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.java_duke_univ [:co.wali.Main.main()].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Java_Project/java_duke_univ/src/main/java/co/wali",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.20798515",
-    "settings.editor.selected.configurable": "Console",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.java_duke_univ [:co.wali.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Java_Project/java_duke_univ/src/main/java/co/wali&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.20798515&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Java_Project\java_duke_univ\src\main\java\co\wali" />
@@ -163,6 +232,15 @@
       <workItem from="1739403966779" duration="34000" />
       <workItem from="1739477005432" duration="7675000" />
       <workItem from="1739858738086" duration="3969000" />
+      <workItem from="1741812134780" duration="603000" />
+      <workItem from="1742048391917" duration="806000" />
+      <workItem from="1742128654566" duration="13306000" />
+      <workItem from="1742632336350" duration="1197000" />
+      <workItem from="1742653452578" duration="1691000" />
+      <workItem from="1742660317186" duration="599000" />
+      <workItem from="1742725222707" duration="7952000" />
+      <workItem from="1742734278057" duration="4160000" />
+      <workItem from="1742748390869" duration="11199000" />
     </task>
     <task id="LOCAL-00001" summary="FirstCommit">
       <created>1719669302362</created>
