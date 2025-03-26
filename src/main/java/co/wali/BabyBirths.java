@@ -22,9 +22,9 @@ public class BabyBirths {
 //        yearOfHighestRank("Mason", "M");
 //        selectFile(0.5, 0.5);
 
-        getAverageRank("Jacob", "M");
-        getAverageRank("Mason", "M");
-
+//        getAverageRank("Jacob", "M");
+//        getAverageRank("Mason", "M");
+        getTotalBirthsRankedHigher("Ethan", "M");
     }
 
     private void readFile(File file) {
@@ -79,6 +79,10 @@ public class BabyBirths {
             });
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+        if (selectedFilesList !=null){
+            System.out.println("No File Selected..");
         }
 
         return selectedFilesList;
@@ -328,6 +332,21 @@ public class BabyBirths {
         System.out.println("Average is: " + average);
 
         return average;
+    }
+
+
+    private int getTotalBirthsRankedHigher(String name, String gender){
+        List<File> listofFiles = selectFile(0.5, 0.8);
+
+        for (File file : listofFiles) {
+            List<CSVRecord> data = getData(file, gender);
+            for (CSVRecord record : data) {
+                if (record.get(0).equalsIgnoreCase(name)) {
+                    System.out.println(record.get(0));
+                }
+            }
+        }
+        return 0;
     }
 
 

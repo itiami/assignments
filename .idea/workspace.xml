@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/BabyBirths.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/BabyBirths.class" afterDir="false" />
@@ -38,25 +37,10 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/TemperatureFinder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/WeatherStats.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/co/wali/WebScraperToExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/co/wali/WebScraperToExcel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/datatest/datatest6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/datatest/datatest6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/example/example4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/example/example4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/shape1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/shape1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/shape2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/shape2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/shape3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/shape3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BabyBirths.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BabyBirths.class.uniqueId0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BabyBirths.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
