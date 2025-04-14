@@ -6,13 +6,13 @@ import edu.duke.Point;
 import java.util.ArrayList;
 
 public class NShape {
-    private ArrayList<edu.duke.Point> points;
+    private ArrayList<Point> points;
 
     /**
      * Create an empty <code>Shape</code> object, one with no points.
      */
     public NShape () {
-        points = new ArrayList<edu.duke.Point>();
+        points = new ArrayList<Point>();
     }
 
     /**
@@ -35,7 +35,7 @@ public class NShape {
             double commaloc = line.indexOf(",");
             double x = Double.parseDouble(line.substring(0, (int) commaloc).trim());
             double y = Double.parseDouble(line.substring((int) (commaloc + 1)).trim());
-            addPoint(new edu.duke.Point((int) x, (int) y));
+            addPoint(new Point((int) x, (int) y));
         }
     }
 
@@ -47,7 +47,7 @@ public class NShape {
      *
      * @param p is the Point added to this shape
      */
-    public void addPoint (edu.duke.Point p) {
+    public void addPoint (Point p) {
         points.add(p);
     }
 
@@ -56,7 +56,7 @@ public class NShape {
      *
      * @return the last Point added
      */
-    public edu.duke.Point getLastPoint () {
+    public Point getLastPoint () {
         return points.get(points.size() - 1);
     }
 

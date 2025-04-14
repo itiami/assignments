@@ -5,26 +5,17 @@ import org.apache.commons.csv.CSVRecord;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.FileReader;
-import java.io.Reader;
+import java.io.*;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
 
 public class BabyBirths {
     public void run() {
-//        printNames();
-//        selectFile(0.7, 0.6);
-//        System.out.println(getRank(1880, "Minnie", ""));
-//        whatIsNameInYear("Isabella", 2012, 2014, "F");
-//        whatIsNameInYear("Isabella", 2012, 2014, "F");
-//        yearOfHighestRank("Mason", "M");
-//        selectFile(0.5, 0.5);
-
-//        getAverageRank("Jacob", "M");
-//        getAverageRank("Mason", "M");
-        getTotalBirthsRankedHigher("Ethan", "M");
+//       getAverageRank("Mason", "M");
+//        getNumberOfPerson();
+//        getRank("Emily","F");
+        getRankOfAPerson("Emily", "F");
     }
 
     private void readFile(File file) {
@@ -81,43 +72,12 @@ public class BabyBirths {
             e.printStackTrace();
         }
 
-        if (selectedFilesList !=null){
-            System.out.println("No File Selected..");
-        }
-
         return selectedFilesList;
     }
 
-    private List<CSVRecord> getData(File file, String gender) {
-        List<CSVRecord> data = new ArrayList<>();
-
-        try {
-            Reader reader = new FileReader(file);
-            Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
-                    .setSkipHeaderRecord(true)
-                    .get()
-                    .parse(reader);
-
-            for (CSVRecord record : records) {
-                if (record.get(1).equalsIgnoreCase(gender)) {
-                    data.add(record);
-                }
-            }
-
-            data.sort((a, b) -> Integer.compare(
-                    Integer.parseInt(b.get(2)),
-                    Integer.parseInt(a.get(2))
-            ));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return data;
-    }
-
-
-    private int getRank(File file, String name, String gender) {
+    private int getRank(String name, String gender) {
 //        File file = new File("src/main/resources/module_5/us_babynames_by_year/yob" + year + ".csv");
-//        File file = new File("src/main/resources/module_5/testing/yob2012short.csv");
+        File file = new File("src/main/resources/module_5/us_babynames_by_year/yob1900.csv");
         int rank = 1;
         int totalBorn = 0;
         List<CSVRecord> data = new ArrayList<>();
@@ -145,7 +105,6 @@ public class BabyBirths {
 
             for (CSVRecord record : data) {
                 if (record.get(0).equalsIgnoreCase(name)) {
-                    System.out.println("Rank of " + name + ": " + rank);
                     break;
                 }
                 rank++;
@@ -155,17 +114,10 @@ public class BabyBirths {
         } catch (Exception e) {
             CustomLogger.logError("Error Found", e);
         }
+
+
+        System.out.println("Rank of " + name + ": " + rank);
         return rank;
-    }
-
-    private String getName(File file, int rank, String gender) {
-        List<CSVRecord> data = getData(file, gender);
-
-        // If rank is valid, return the name at that rank; otherwise return "NO NAME"
-        if (rank > 0 && rank <= data.size()) {
-            return data.get(rank - 1).get(0); // Rank 1 corresponds to index 0
-        }
-        return "NO NAME";
     }
 
 
@@ -312,7 +264,7 @@ public class BabyBirths {
         return yearOfHighest;  // Returns the year where the name had its highest rank
     }
 
-    private double getAverageRank(String name, String gender) {
+/*    private double getAverageRank(String name, String gender) {
         List<File> listOfFiles = selectFile(null, null);
         double totalRank = 0.0;
         int filesWithName = 0;
@@ -332,20 +284,98 @@ public class BabyBirths {
         System.out.println("Average is: " + average);
 
         return average;
+    }*/
+
+//    ...................................................................................
+    private List<CSVRecord> getData(File file) {
+        List<CSVRecord> data = new ArrayList<>();
+
+        try {
+            Reader reader = new FileReader(file);
+            Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
+                    .setSkipHeaderRecord(true)
+                    .get()
+                    .parse(reader);
+
+            for (CSVRecord record : records) {
+                data.add(record);
+            }
+
+            data.sort((a, b) -> Integer.compare(
+                    Integer.parseInt(b.get(2)),
+                    Integer.parseInt(a.get(2))
+            ));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
     }
 
+      private int getRankOfAPerson(String babyName, String babyGender) {
+        List<File> listOfFiles = selectFile(null, null);
+        int countGirls = 0;
+        int countBoys = 0;
+        int countTotal = 0;
+        int totalBirths = 0;
 
-    private int getTotalBirthsRankedHigher(String name, String gender){
-        List<File> listofFiles = selectFile(0.5, 0.8);
+        int emilyCount = -1;
+        int emilyRank = 1; // Rank starts at 1 (not 0)
+        String highestRankedPerson = "";
+        String highestGender = "";
+        int highestCount = -1;
 
-        for (File file : listofFiles) {
-            List<CSVRecord> data = getData(file, gender);
-            for (CSVRecord record : data) {
-                if (record.get(0).equalsIgnoreCase(name)) {
-                    System.out.println(record.get(0));
+
+        for (File file: listOfFiles){
+            List<CSVRecord> records = getData(file);
+            for (CSVRecord record: records){
+                 String name = record.get(0);
+                 String gender = record.get(1);
+                int count = Integer.parseInt(record.get(2));
+
+                countTotal++;
+                totalBirths +=count;
+
+                if (record.get(1).equalsIgnoreCase("F")){
+                    countGirls++;
+                }
+                if (record.get(1).equalsIgnoreCase("M")){
+                    countBoys++;
+                }
+
+                if (count > highestCount){
+                    highestCount = count;
+                    highestRankedPerson = name;
+                    highestGender = gender;
+                }
+
+                if (name.equalsIgnoreCase(babyName)){
+                    emilyCount = count;
                 }
             }
+
+
+            // Now determine Emily's rank (among same gender)
+            if (emilyCount != -1) {
+                for (CSVRecord record : records) {
+                    int count = Integer.parseInt(record.get(2));
+                    if (record.get(1).equalsIgnoreCase(babyGender) && count > emilyCount) {
+                        emilyRank++;
+                    }
+                }
+            } else {
+                emilyRank = -1; // Not found
+            }
+
         }
+
+        System.out.println("Count of Emily: " + emilyCount);
+        System.out.println("Rank of Emily: " + emilyRank);
+        System.out.println("Height Count Person is : " + highestRankedPerson + ", " + highestGender + " - " +highestCount);
+        System.out.println("Total number of Girl's Name: " + countGirls);
+        System.out.println("Total number of Boys's Name: " + countBoys);
+        System.out.println("Total number of Name: " + countTotal);
+        System.out.println("Total totalBirths  : " + totalBirths);
+
         return 0;
     }
 

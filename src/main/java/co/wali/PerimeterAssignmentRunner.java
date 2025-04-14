@@ -18,7 +18,7 @@ public class PerimeterAssignmentRunner  {
 
     public double getPerimeter (Shape s) {
         double totalPerim = 0.0;
-        edu.duke.Point prevPt = s.getLastPoint();
+        Point prevPt = s.getLastPoint();
         for (Point currPt : s.getPoints()) {
             double currDist = prevPt.distance(currPt);
             totalPerim = totalPerim + currDist;

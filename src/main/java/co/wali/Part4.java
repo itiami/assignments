@@ -20,7 +20,7 @@ public class Part4 {
     }
 
 
-    private void printUrls(String url) {
+    public void printUrls(String url) {
         URLResource myurl = new URLResource(url);
         for(String word : myurl.words()) {
             if(word.toLowerCase().indexOf("youtube.com") != -1) {
@@ -31,7 +31,7 @@ public class Part4 {
         }
     }
 
-    private void testUrl() {
+    public void testUrl() {
         printUrls("http://www.dukelearntoprogram.com/course2/data/manylinks.html");
     }
 
