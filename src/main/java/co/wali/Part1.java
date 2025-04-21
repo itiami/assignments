@@ -49,8 +49,8 @@ public class Part1 {
         int start = stringBuilder.indexOf("ATG");
         int stop = stringBuilder.indexOf("TGA", start + 3);
 
-        System.out.println("index position of the start codon “ATG” - " + findSimpleGene(stringBuilder.toString()));
-        System.out.println("index position of the first stop codon “TAA” - " + stop);
+        System.out.println("index position of the start codon ATG - " + findSimpleGene(stringBuilder.toString()));
+        System.out.println("index position of the first stop codon TAA - " + stop);
         String dna = stringBuilder.toString().substring(start, stop + 3);
         int isDivisable = ((stop - start) % 3);
         System.out.println(dna);

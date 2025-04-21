@@ -15,7 +15,7 @@ public class BabyBirths {
 //       getAverageRank("Mason", "M");
 //        getNumberOfPerson();
 //        getRank("Emily","F");
-        getRankOfAPerson("Emily", "F");
+        getRankOfAPerson("Emma", "F");
     }
 
     private void readFile(File file) {
@@ -286,7 +286,7 @@ public class BabyBirths {
         return average;
     }*/
 
-//    ...................................................................................
+    //    ...................................................................................
     private List<CSVRecord> getData(File file) {
         List<CSVRecord> data = new ArrayList<>();
 
@@ -311,7 +311,7 @@ public class BabyBirths {
         return data;
     }
 
-      private int getRankOfAPerson(String babyName, String babyGender) {
+    private int getRankOfAPerson(String babyName, String babyGender) {
         List<File> listOfFiles = selectFile(null, null);
         int countGirls = 0;
         int countBoys = 0;
@@ -325,30 +325,30 @@ public class BabyBirths {
         int highestCount = -1;
 
 
-        for (File file: listOfFiles){
+        for (File file : listOfFiles) {
             List<CSVRecord> records = getData(file);
-            for (CSVRecord record: records){
-                 String name = record.get(0);
-                 String gender = record.get(1);
+            for (CSVRecord record : records) {
+                String name = record.get(0);
+                String gender = record.get(1);
                 int count = Integer.parseInt(record.get(2));
 
                 countTotal++;
-                totalBirths +=count;
+                totalBirths += count;
 
-                if (record.get(1).equalsIgnoreCase("F")){
+                if (record.get(1).equalsIgnoreCase("F")) {
                     countGirls++;
                 }
-                if (record.get(1).equalsIgnoreCase("M")){
+                if (record.get(1).equalsIgnoreCase("M")) {
                     countBoys++;
                 }
 
-                if (count > highestCount){
+                if (count > highestCount) {
                     highestCount = count;
                     highestRankedPerson = name;
                     highestGender = gender;
                 }
 
-                if (name.equalsIgnoreCase(babyName)){
+                if (name.equalsIgnoreCase(babyName)) {
                     emilyCount = count;
                 }
             }
@@ -368,14 +368,13 @@ public class BabyBirths {
 
         }
 
-        System.out.println("Count of Emily: " + emilyCount);
-        System.out.println("Rank of Emily: " + emilyRank);
-        System.out.println("Height Count Person is : " + highestRankedPerson + ", " + highestGender + " - " +highestCount);
+        System.out.println("Rank of " + babyName + " : " + emilyRank);
+        System.out.println("Number of time " + babyName + " used: " + emilyCount);
+        System.out.println("Height Count Person is : " + highestRankedPerson + ", " + highestGender + " - " + highestCount);
         System.out.println("Total number of Girl's Name: " + countGirls);
         System.out.println("Total number of Boys's Name: " + countBoys);
         System.out.println("Total number of Name: " + countTotal);
         System.out.println("Total totalBirths  : " + totalBirths);
-
         return 0;
     }
 
