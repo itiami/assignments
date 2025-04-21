@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="88c002cd-9b10-44a3-be0a-f1da864b01ee" name="Changes" comment="Shape and URL by Jsoup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/BabyBirths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/wali/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/wali/Part2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,52 +96,10 @@
       <recent name="co.wali" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Custom Gradle Run">
-    <configuration name="MainApp" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="23" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="co.wali.Main" />
-      <module name="Java_Duke_University.main" />
-      <extension name="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-        </ENTRIES>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Custom Gradle Run" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-            <option value="check" />
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>false</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.Custom Gradle Run For Java">
     <list>
       <item itemvalue="Application.MainApp" />
-      <item itemvalue="Gradle.Custom Gradle Run" />
+      <item itemvalue="Gradle.Custom Gradle Run For Java" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -225,7 +179,7 @@
       <workItem from="1744627101689" duration="1089000" />
       <workItem from="1744628820576" duration="8000" />
       <workItem from="1745171601782" duration="1391000" />
-      <workItem from="1745221411799" duration="1418000" />
+      <workItem from="1745221411799" duration="3330000" />
     </task>
     <task id="LOCAL-00001" summary="FirstCommit">
       <created>1719669302362</created>
