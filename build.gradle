@@ -33,13 +33,13 @@ dependencies {
 
 
 processResources {
-    exclude '**/*.xlsx'
+//    exclude '**/*.xlsx'
 }
 
 sourceSets {
     main {
         resources {
-            exclude '**/*.xlsx'
+//            exclude '**/*.xlsx'
         }
     }
 }
