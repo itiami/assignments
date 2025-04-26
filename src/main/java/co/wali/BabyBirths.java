@@ -2,7 +2,6 @@ package co.wali;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.json.JSONObject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,13 +14,11 @@ import java.util.regex.Pattern;
 
 public class BabyBirths {
     public void run() {
-//       getAverageRank("Mason", "M");
-//        getNumberOfPerson();
-//        getRank("Emily","F");
+
 //        getRankOfAPerson("Mason", "M");
-        whatIsNameInYear("Mason", "M");
-//        yearOfHighestRank("Mason", "M");
-//        getRank("Mason", "M");
+//        whatIsNameInYear("Mason", "M");
+        getNameBasedOnRank(2, "M");
+
     }
 
     private void readFile(File file) {
@@ -38,49 +35,7 @@ public class BabyBirths {
     }
 
     //    Java File(s) Selector
-    private List<File> selectFile(Double widthPercent, Double heightPercent) {
-        // Create a List to store the selected files
-        final List<File> selectedFilesList = new ArrayList<>();
 
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        // a default values if parameters are null
-        int width = (int) (screenSize.width * (widthPercent != null ? widthPercent : 0.4)); // Default to 50% if null
-        int height = (int) (screenSize.height * (heightPercent != null ? heightPercent : 0.5)); // Default to 50% if null
-
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // Use invokeAndWait instead of invokeLater to wait for user selection
-        try {
-            SwingUtilities.invokeAndWait(() -> {
-                JFileChooser fileChooser = new JFileChooser();
-                fileChooser.setMultiSelectionEnabled(true);
-                fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-                fileChooser.setDialogTitle("Select CSV File(s)");
-                fileChooser.setPreferredSize(new Dimension(width, height));
-
-                String resourcesPath = Paths.get("src", "main", "resources/module_5").toAbsolutePath().toString();
-                File resourcesDir = new File(resourcesPath);
-                if (resourcesDir.exists() && resourcesDir.isDirectory()) {
-                    fileChooser.setCurrentDirectory(resourcesDir);
-                }
-
-                int result = fileChooser.showOpenDialog(null);
-                if (result == JFileChooser.APPROVE_OPTION) {
-                    // Convert File[] to List<File>
-                    File[] selectedFiles = fileChooser.getSelectedFiles();
-                    selectedFilesList.addAll(Arrays.asList(selectedFiles));
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return selectedFilesList;
-    }
 
     //    Get Rank of a person
     private int getRank(String name, String gender) {
@@ -140,65 +95,6 @@ public class BabyBirths {
             }
         }
         return -1; // Not found
-    }
-
-    private void whatIsNameInYear(String name, String gender) {
-        List<File> files = selectFile(null, null); // Assuming this gets the two CSV files
-        Pattern pattern = Pattern.compile("\\d+");
-
-        if (files.size() == 2) {
-            for (File file : files) {
-                String year = "";
-                Matcher matcher = pattern.matcher(file.getName());
-
-                if (matcher.find()) {
-                    year = matcher.group();
-                }
-
-                // Filter and collect matching gender records
-                List<CSVRecord> filteredRecords = new ArrayList<>();
-                for (CSVRecord data : getData(file)) {
-                    if (data.get(1).equalsIgnoreCase(gender)) {
-                        filteredRecords.add(data);
-                    }
-                }
-
-                // Sort filteredRecords by usage count descending
-                filteredRecords.sort((a, b) -> Integer.compare(
-                        Integer.parseInt(b.get(2)),
-                        Integer.parseInt(a.get(2))
-                ));
-
-                // Find rank of the target name
-                boolean found = false;
-                int rank = 0;
-                int prevCount = -1;
-                int actualRank = 0; // rank taking ties into account
-
-                for (CSVRecord record : filteredRecords) {
-                    int currentCount = Integer.parseInt(record.get(2));
-                    actualRank++;
-
-                    if (currentCount != prevCount) {
-                        rank = actualRank;
-                        prevCount = currentCount;
-                    }
-
-                    if (record.get(0).equalsIgnoreCase(name)) {
-                        System.out.println("Year: " + year + " , " + record.get(0) + " total usages: " + record.get(2)
-                                + ", Rank: " + rank);
-                        found = true;
-                        break;
-                    }
-                }
-
-                if (!found) {
-                    System.out.println(name + " not found in year " + year);
-                }
-            }
-        } else {
-            System.out.println("Expected 2 files but found: " + files.size());
-        }
     }
 
 
@@ -284,6 +180,51 @@ public class BabyBirths {
     }
 
     //    ...................................................................................
+
+    private List<File> selectFile(Double widthPercent, Double heightPercent) {
+        // Create a List to store the selected files
+        final List<File> selectedFilesList = new ArrayList<>();
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        // a default values if parameters are null
+        int width = (int) (screenSize.width * (widthPercent != null ? widthPercent : 0.4)); // Default to 50% if null
+        int height = (int) (screenSize.height * (heightPercent != null ? heightPercent : 0.5)); // Default to 50% if null
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Use invokeAndWait instead of invokeLater to wait for user selection
+        try {
+            SwingUtilities.invokeAndWait(() -> {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setMultiSelectionEnabled(true);
+                fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+                fileChooser.setDialogTitle("Select CSV File(s)");
+                fileChooser.setPreferredSize(new Dimension(width, height));
+
+                String resourcesPath = Paths.get("src", "main", "resources/module_5").toAbsolutePath().toString();
+                File resourcesDir = new File(resourcesPath);
+                if (resourcesDir.exists() && resourcesDir.isDirectory()) {
+                    fileChooser.setCurrentDirectory(resourcesDir);
+                }
+
+                int result = fileChooser.showOpenDialog(null);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    // Convert File[] to List<File>
+                    File[] selectedFiles = fileChooser.getSelectedFiles();
+                    selectedFilesList.addAll(Arrays.asList(selectedFiles));
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return selectedFilesList;
+    }
+
     private List<CSVRecord> getData(File file) {
         List<CSVRecord> data = new ArrayList<>();
 
@@ -308,6 +249,7 @@ public class BabyBirths {
         return data;
     }
 
+    //    totalBirths, getRank
     private int getRankOfAPerson(String babyName, String babyGender) {
         Pattern pattern = Pattern.compile("\\d+");
         List<File> listOfFiles = selectFile(null, null);
@@ -386,6 +328,98 @@ public class BabyBirths {
         }
 
         return 0;
+    }
+
+    private void getNameBasedOnRank(int rank, String gender) {
+        List<File> files = selectFile(null, null); // select file/files
+        if (files.isEmpty()) {
+            System.out.println("No File Selected.. ");
+        }
+
+        for (File file : files) {
+            List<CSVRecord> records = getData(file); // capture records using FileReader and CSVFormate
+
+            List<CSVRecord> formatData = new ArrayList<>();
+
+            for (CSVRecord record : records) {
+                if (record.get(1).equalsIgnoreCase(gender)) {
+                    formatData.add(record);
+                }
+            }
+
+            formatData.sort((a, b) -> Integer.compare(
+                    Integer.parseInt(b.get(2)),
+                    Integer.parseInt(a.get(2))
+            ));
+
+
+            if (rank > 0 && rank <= formatData.size()) {
+                CSVRecord targetRecord = formatData.get(rank - 1); // Rank 1 is index 0
+                System.out.println(targetRecord);
+                System.out.println(rank);
+                System.out.println(rank - 1);
+            }
+        }
+    }
+
+    //    Compare Name between 2 year...............
+    private void whatIsNameInYear(String name, String gender) {
+        List<File> files = selectFile(null, null); // Assuming this gets the two CSV files
+        Pattern pattern = Pattern.compile("\\d+");
+
+        if (files.size() == 2) {
+            for (File file : files) {
+                String year = "";
+                Matcher matcher = pattern.matcher(file.getName());
+
+                if (matcher.find()) {
+                    year = matcher.group();
+                }
+
+                // Filter and collect matching gender records
+                List<CSVRecord> filteredRecords = new ArrayList<>();
+                for (CSVRecord data : getData(file)) {
+                    if (data.get(1).equalsIgnoreCase(gender)) {
+                        filteredRecords.add(data);
+                    }
+                }
+
+                // Sort filteredRecords by usage count descending
+                filteredRecords.sort((a, b) -> Integer.compare(
+                        Integer.parseInt(b.get(2)),
+                        Integer.parseInt(a.get(2))
+                ));
+
+                // Find rank of the target name
+                boolean found = false;
+                int rank = 0;
+                int prevCount = -1;
+                int actualRank = 0; // rank taking ties into account
+
+                for (CSVRecord record : filteredRecords) {
+                    int currentCount = Integer.parseInt(record.get(2));
+                    actualRank++;
+
+                    if (currentCount != prevCount) {
+                        rank = actualRank;
+                        prevCount = currentCount;
+                    }
+
+                    if (record.get(0).equalsIgnoreCase(name)) {
+                        System.out.println("Year: " + year + " , " + record.get(0) + " total usages: " + record.get(2)
+                                + ", Rank: " + rank);
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    System.out.println(name + " not found in year " + year);
+                }
+            }
+        } else {
+            System.out.println("Please Select 2 File Only, Total File selected are: " + files.size());
+        }
     }
 
 
