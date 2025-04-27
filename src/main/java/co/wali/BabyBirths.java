@@ -249,6 +249,16 @@ public class BabyBirths {
         return data;
     }
 
+    private int getYear(String fileName){
+        int year = 0;
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(fileName);
+        if (matcher.find()){
+            year = Integer.parseInt(matcher.group());
+        }
+        return year;
+    }
+
     //    totalBirths, getRank
     private int getRankOfAPerson(String babyName, String babyGender) {
         Pattern pattern = Pattern.compile("\\d+");
@@ -352,9 +362,8 @@ public class BabyBirths {
 
             if (rank > 0 && rank <= formatData.size()) {
                 CSVRecord targetRecord = formatData.get(rank - 1); // Rank 1 is index 0
-                System.out.println(targetRecord);
-                System.out.println(rank);
-                System.out.println(rank - 1);
+                System.out.println("In Year " + getYear(file.getName()) +
+                        " The Rank: "+ rank + " is hold by: " + targetRecord.get(0));
             }
         }
     }
