@@ -14,11 +14,10 @@ import java.util.regex.Pattern;
 
 public class BabyBirths {
     public void run() {
-
 //        getRankOfAPerson("Mason", "M");
-        whatIsNameInYear("Claud", "M");
+//        whatIsNameInYear("Claud", "M");
 //        getNameBasedOnRank(35, "M");
-
+        getAverageRank("Jacob", "M");
     }
 
     private void readFile(File file) {
@@ -32,54 +31,6 @@ public class BabyBirths {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    //    Java File(s) Selector
-
-
-    //    Get Rank of a person
-    private int getRank(String name, String gender) {
-        List<File> files = selectFile(null, null);
-        int rank = 1;
-        int totalBorn = 0;
-        List<CSVRecord> data = new ArrayList<>();
-
-        for (File file : files) {
-            try {
-                Reader reader = new FileReader(file);
-                Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
-                        .setSkipHeaderRecord(true)
-                        .get()
-                        .parse(reader);
-                for (CSVRecord record : records) {
-                    int born = Integer.parseInt(record.get(2));
-                    totalBorn += born;
-                    if (record.get(1).equalsIgnoreCase(gender)) {
-                        data.add(record);
-                    }
-                }
-
-                // Sorting data by birth count in descending order
-                data.sort((a, b) -> Integer.compare(
-                        Integer.parseInt(b.get(2)), // Sorting in descending order
-                        Integer.parseInt(a.get(2))
-                ));
-
-
-                for (CSVRecord record : data) {
-                    if (record.get(0).equalsIgnoreCase(name)) {
-                        break;
-                    }
-                    rank++;
-                }
-
-
-            } catch (Exception e) {
-                CustomLogger.logError("Error Found", e);
-            }
-        }
-        System.out.println("Rank of " + name + ": " + rank);
-        return rank;
     }
 
     private int getRankOfName(List<CSVRecord> records, String name, String gender) {
@@ -157,30 +108,8 @@ public class BabyBirths {
         return yearOfHighest;  // Returns the year where the name had its highest rank
     }
 
-    private double getAverageRank(String name, String gender) {
-        List<File> listOfFiles = selectFile(null, null);
-        double totalRank = 0.0;
-        int filesWithName = 0;
-
-        for (File file : listOfFiles) {
-            int currentRank = getRank(name, gender);
-            if (currentRank != -1) {
-                totalRank += currentRank;
-                filesWithName++;
-            }
-        }
-
-        double average = totalRank / filesWithName;
-
-        System.out.println("Total Files with name: " + filesWithName);
-        System.out.println("Total Rank of " + name + " is: " + totalRank);
-        System.out.println("Average is: " + average);
-
-        return average;
-    }
 
     //    ...................................................................................
-
     private List<File> selectFile(Double widthPercent, Double heightPercent) {
         // Create a List to store the selected files
         final List<File> selectedFilesList = new ArrayList<>();
@@ -227,7 +156,6 @@ public class BabyBirths {
 
     private List<CSVRecord> getData(File file) {
         List<CSVRecord> data = new ArrayList<>();
-
         try {
             Reader reader = new FileReader(file);
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
@@ -249,95 +177,212 @@ public class BabyBirths {
         return data;
     }
 
-    private int getYear(String fileName){
+    private int regexYear(String fileName) {
         int year = 0;
         Pattern pattern = Pattern.compile("\\d+");
         Matcher matcher = pattern.matcher(fileName);
-        if (matcher.find()){
+        if (matcher.find()) {
             year = Integer.parseInt(matcher.group());
         }
         return year;
     }
 
-    //    totalBirths, getRank
+
     private int getRankOfAPerson(String babyName, String babyGender) {
         Pattern pattern = Pattern.compile("\\d+");
         List<File> listOfFiles = selectFile(null, null);
-        int countGirls = 0;
-        int countBoys = 0;
-        int countTotal = 0;
-        int totalBirths = 0;
-
-        int countName = -1;
-        int emilyRank = 1; // Rank starts at 1 (not 0)
-        String highestRankedPerson = "";
-        String highestGender = "";
-        int highestCount = -1;
-
-
-        for (File file : listOfFiles) {
-            Matcher matcher = pattern.matcher(file.getName());
-            if (matcher.find()) {
-                System.out.println("Yar Selected: " + matcher.group());
-            }
-        }
-
+        // to get the Rank from a single File..
         if (listOfFiles.size() == 1) {
+            String fileName = "";
+            int countGirls = 0;
+            int countBoys = 0;
+            int countTotalName = 0;
+            int sumOfBirth = 0;
+            int sumBirthHigher = 0;
+            int foundBabyName = -1;
+            int selectedBabyRank = 1; // Rank starts at 1 (not 0)
+            String highestRankedPerson = "";
+            String highestGender = "";
+            int highestCount = -1;
             for (File file : listOfFiles) {
+                Matcher matcher = pattern.matcher(file.getName());
+                if (matcher.find()) {
+                    fileName = matcher.group();
+                }
+
                 List<CSVRecord> records = getData(file);
                 for (CSVRecord record : records) {
-                    String name = record.get(0);
-                    String gender = record.get(1);
-                    int count = Integer.parseInt(record.get(2));
+                    String name = record.get(0); // to store the name of each cell
+                    String gender = record.get(1); // to store gender of each cell
+                    int numInBirthRow = Integer.parseInt(record.get(2)); // to store the birth's number in each cell
 
-                    countTotal++;
-                    totalBirths += count;
+                    // to count total number of row. i.g 1+1+1... etc..
+                    countTotalName++;
 
-                    if (record.get(1).equalsIgnoreCase("F")) {
-                        countGirls++;
-                    }
-                    if (record.get(1).equalsIgnoreCase("M")) {
-                        countBoys++;
-                    }
+                    // to sum each cell. i.g 10+9+8+...
+                    sumOfBirth += numInBirthRow;
+                    /*
+                    10+0=10
+                    10+9=19
+                    19+8=27
+                    27+..... etc..
+                    */
 
-                    if (count > highestCount) {
-                        highestCount = count;
+                    if (numInBirthRow > highestCount) {
+                        highestCount = numInBirthRow;
                         highestRankedPerson = name;
                         highestGender = gender;
                     }
 
                     if (name.equalsIgnoreCase(babyName)) {
-                        countName = count;
+                        foundBabyName = numInBirthRow;
                     }
+
+                    if (record.get(1).equalsIgnoreCase("F")) {
+                        countGirls++; // count girl's name. i.g. 1+1+1.. etc
+                    }
+                    if (record.get(1).equalsIgnoreCase("M")) {
+                        countBoys++;  // count boy's name. i.g. 1+1+1.. etc
+                    }
+
                 }
 
 
-                // Now determine Emily's rank (among same gender)
-                if (countName != -1) {
+                // Now determine Baby's rank (among same gender)
+                if (foundBabyName != -1) {
                     for (CSVRecord record : records) {
-                        int count = Integer.parseInt(record.get(2));
-                        if (record.get(1).equalsIgnoreCase(babyGender) && count > countName) {
-                            emilyRank++;
+                        String gender = record.get(1);
+                        int numInBirthRow = Integer.parseInt(record.get(2));
+
+                        if (gender.equalsIgnoreCase(babyGender)) {
+                            if (numInBirthRow > foundBabyName) {
+                                sumBirthHigher += numInBirthRow;
+                                selectedBabyRank++;
+                            }
                         }
                     }
                 } else {
-                    emilyRank = -1; // Not found
+                    selectedBabyRank = -1; // Not found
                 }
+
+
             }
-            System.out.println("Rank of " + babyName + " : " + emilyRank);
-            System.out.println("Number of time " + babyName + " used: " + countName);
+            System.out.println("........Result's From File.." + fileName);
+            System.out.println("Rank of " + babyName + " : " + selectedBabyRank);
+            System.out.println("Number of time " + babyName + " used: " + foundBabyName);
             System.out.println("Height Count Person is : " + highestRankedPerson + ", " + highestGender + " - " + highestCount);
             System.out.println("Total number of Girl's Name: " + countGirls);
             System.out.println("Total number of Boys's Name: " + countBoys);
-            System.out.println("Total number of Name: " + countTotal);
-            System.out.println("Total totalBirths  : " + totalBirths);
-
+            System.out.println("Total number of Name: " + countTotalName);
+            System.out.println("Total Births  : " + sumOfBirth);
+            System.out.println("Total Births heigher then " + babyName + " : " + sumBirthHigher);
         }
 
+//        if Multiple File selected..
+        if (listOfFiles.size() > 1) {
+            List<Integer> fileName = new ArrayList<>();
+            double rank = 0.0;
+
+            for (File file : listOfFiles) {
+                Matcher matcher = pattern.matcher(file.getName());
+                int currentRank = getRankFromFile(file, babyName, babyGender);
+
+                if (currentRank != -1) {
+                    rank += currentRank;
+                }
+            }
+            System.out.println("AverageRank is: " + rank / listOfFiles.size());
+        }
         return 0;
     }
 
-//    Get Name by a given rank, gender from selected year..
+    private void getAverageRank(String babyName, String babyGender) {
+        List<File> listOfFiles = selectFile(null, null);
+
+        if (listOfFiles.isEmpty()) {
+            System.out.println("No files selected.");
+            return;
+        }
+
+        double totalRank = 0.0;
+        int foundInFiles = 0;
+
+        for (File file : listOfFiles) {
+            List<CSVRecord> records = getData(file);
+
+            // Find all records matching the gender
+            List<CSVRecord> filteredData = new ArrayList<>();
+            for (CSVRecord record : records) {
+                if (record.get(1).equalsIgnoreCase(babyGender)) {
+                    filteredData.add(record);
+                }
+            }
+
+            // Sort by count descending to assign ranks
+            filteredData.sort((a, b) -> Integer.compare(
+                    Integer.parseInt(b.get(2)),
+                    Integer.parseInt(a.get(2))
+            ));
+
+            // Now, assign rank
+            int rank = 1;
+            for (CSVRecord record : filteredData) {
+                if (record.get(0).equalsIgnoreCase(babyName)) {
+                    totalRank += rank;
+                    foundInFiles++;
+                    break; // No need to keep looking
+                }
+                rank++;
+            }
+        }
+
+        if (foundInFiles > 0) {
+            double averageRank = totalRank / foundInFiles;
+            System.out.println("Average rank of " + babyName + " (" + babyGender + "): " + averageRank);
+        } else {
+            System.out.println("Name " + babyName + " (" + babyGender + ") not found in any file.");
+        }
+    }
+
+
+    private int getRankFromFile(File file, String name, String gender) {
+        List<CSVRecord> data = new ArrayList<>();
+
+        try (Reader reader = new FileReader(file)) {
+            Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder()
+                    .setSkipHeaderRecord(true)
+                    .get()
+                    .parse(reader);
+
+            for (CSVRecord record : records) {
+                if (record.get(1).equalsIgnoreCase(gender)) {
+                    data.add(record);
+                }
+            }
+
+            // Sorting by birth count (Descending)
+            data.sort((a, b) -> Integer.compare(
+                    Integer.parseInt(b.get(2)),
+                    Integer.parseInt(a.get(2))
+            ));
+
+            // Now search for the name in sorted data
+            int rank = 1;
+            for (CSVRecord record : data) {
+                if (record.get(0).equalsIgnoreCase(name)) {
+                    return rank;
+                }
+                rank++;
+            }
+
+        } catch (Exception e) {
+            CustomLogger.logError("Error Found", e);
+        }
+        return -1; // Name not found
+    }
+
+
+    //    Get Name by a given rank, gender from selected year..
     private void getNameBasedOnRank(int rank, String gender) {
         List<File> files = selectFile(null, null); // select file/files
         if (files.isEmpty()) {
@@ -363,10 +408,10 @@ public class BabyBirths {
 
             if (rank > 0 && rank <= formatData.size()) {
                 CSVRecord targetRecord = formatData.get(rank - 1); // Rank 1 is index 0
-                System.out.println("In Year " + getYear(file.getName()) +
-                        " The Rank: "+ rank + " is hold by: " + targetRecord.get(0));
-            }else {
-                System.out.println("The Rank does not found in year: " + getYear(file.getName()));
+                System.out.println("In Year " + regexYear(file.getName()) +
+                        " The Rank: " + rank + " is hold by: " + targetRecord.get(0));
+            } else {
+                System.out.println("The Rank does not found in year: " + regexYear(file.getName()));
             }
         }
     }
