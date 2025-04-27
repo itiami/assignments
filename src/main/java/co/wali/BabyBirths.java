@@ -266,7 +266,6 @@ public class BabyBirths {
 
 
         for (File file : listOfFiles) {
-
             Matcher matcher = pattern.matcher(file.getName());
             if (matcher.find()) {
                 System.out.println("Yar Selected: " + matcher.group());
@@ -315,8 +314,6 @@ public class BabyBirths {
                     emilyRank = -1; // Not found
                 }
             }
-
-            System.out.println("Number of File Selected: " + listOfFiles.size());
             System.out.println("Rank of " + babyName + " : " + emilyRank);
             System.out.println("Number of time " + babyName + " used: " + countName);
             System.out.println("Height Count Person is : " + highestRankedPerson + ", " + highestGender + " - " + highestCount);
