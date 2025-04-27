@@ -16,8 +16,8 @@ public class BabyBirths {
     public void run() {
 
 //        getRankOfAPerson("Mason", "M");
-//        whatIsNameInYear("Mason", "M");
-        getNameBasedOnRank(2, "M");
+        whatIsNameInYear("Claud", "M");
+//        getNameBasedOnRank(35, "M");
 
     }
 
@@ -337,6 +337,7 @@ public class BabyBirths {
         return 0;
     }
 
+//    Get Name by a given rank, gender from selected year..
     private void getNameBasedOnRank(int rank, String gender) {
         List<File> files = selectFile(null, null); // select file/files
         if (files.isEmpty()) {
@@ -364,6 +365,8 @@ public class BabyBirths {
                 CSVRecord targetRecord = formatData.get(rank - 1); // Rank 1 is index 0
                 System.out.println("In Year " + getYear(file.getName()) +
                         " The Rank: "+ rank + " is hold by: " + targetRecord.get(0));
+            }else {
+                System.out.println("The Rank does not found in year: " + getYear(file.getName()));
             }
         }
     }
