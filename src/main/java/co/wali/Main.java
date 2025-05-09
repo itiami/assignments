@@ -38,12 +38,12 @@ public class Main {
 
         // Example of running a single task (uncomment and adjust as needed)
         BabyBirths babyBirths = new BabyBirths();
-//        babyBirths.run();
+        babyBirths.run();
 //        runTask(babyBirths::run, "BabyBirths");
-        executorService.execute(babyBirths::run);
-        executorService.shutdown();
-        long endTime = System.nanoTime();
-        double executionTimeMs = (endTime - startTime) / 1_000_000.0; // Convert nanoseconds to milliseconds
-        System.out.printf("Execution time: %.3f ms%n", executionTimeMs);
+//        executorService.execute(babyBirths::run);
+//        executorService.shutdown();
+//        long endTime = System.nanoTime();
+//        double executionTimeMs = (endTime - startTime) / 1_000_000.0; // Convert nanoseconds to milliseconds
+//        System.out.printf("Execution time: %.3f ms%n", executionTimeMs);
     }
 }
