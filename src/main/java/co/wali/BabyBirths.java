@@ -17,7 +17,8 @@ public class BabyBirths {
 //        getRankOfAPerson("Mason", "M");
 //        whatIsNameInYear("Claud", "M");
 //        getNameBasedOnRank(35, "M");
-        getAverageRank("Jacob", "M");
+//        getAverageRank("Jacob", "M");
+        yearOfHighestRank("Mason", "M");
     }
 
     private void readFile(File file) {
@@ -89,7 +90,7 @@ public class BabyBirths {
                                 highestRank = rank;
                                 yearOfHighest = currentYear;
 
-                                System.out.println(name + "found in File:  " + file.getName() + ", And his rank is: " + highestRank);
+                                System.out.println(name + " found in File:  " + file.getName() + ", And his rank is: " + highestRank);
                             }
                             break;
                         }
