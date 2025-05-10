@@ -33,10 +33,6 @@ public class Main {
         ExecutorService executorService = Executors.newFixedThreadPool(4);
 
 
-//        Main main = new Main();
-//        main.listDirectoryContents(); // Optimized directory listing
-
-        // Example of running a single task (uncomment and adjust as needed)
         BabyBirths babyBirths = new BabyBirths();
 //        babyBirths.run();
 //        runTask(babyBirths::run, "BabyBirths");
